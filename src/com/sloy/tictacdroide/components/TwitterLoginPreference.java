@@ -33,20 +33,13 @@ public class TwitterLoginPreference extends Preference {
 	@Override
 	protected void onBindView(View view) {
 		super.onBindView(view);
+		if(true)return;
 		mProgressBar = (ProgressBar)view.findViewById(R.id.twitter_login_load);
 		mImageView = (ImageView)view.findViewById(R.id.twitter_login_pic);
 		
 		if(Utils.isNetworkAvailable(getContext())){
 			if(mTwitter!=null){
 				// Logged in
-				try {
-					setTitle("Log out");
-					setSummary("You are logged in as @"+mTwitter.getScreenName());
-				} catch (IllegalStateException e1) {
-					e1.printStackTrace();
-				} catch (TwitterException e1) {
-					e1.printStackTrace();
-				}
 				mImageView.setVisibility(View.GONE);
 				mProgressBar.setVisibility(View.VISIBLE);
 				new Thread(){

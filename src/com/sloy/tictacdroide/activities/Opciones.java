@@ -134,10 +134,23 @@ public class Opciones extends PreferenceActivity implements OnPreferenceChangeLi
 	}	
 	
 	private void twitterCheck(){
+		String title = "Log in";
+		String summary = "Conect to your Twitter account";
 		if(app.isAuthorized()){
-        	twLogin.mTwitter = app.getTwitter();
+			try{
+				Twitter tw = app.getTwitter();
+	        	//Sets title and summary
+	        	title = "Log out";
+	        	summary = "You are logged in as @"+tw.getScreenName();
+			}catch(TwitterException e){
+				Log.e("tictacdroide", e.getMessage());
+			}catch(IllegalStateException e){
+				Log.e("tictacdroide", e.getMessage());
+			}
         }else{
         	twLogin.mTwitter=null;
         }
+		twLogin.setTitle(title);
+		twLogin.setSummary(summary);
 	}
 }
