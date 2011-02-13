@@ -1,0 +1,11 @@
+En esta carpeta se encuentran las siguientes clases encargadas 
+de manejar el sistema de OpenFeint:
+
+AchievementsCheker.java
+AchievementsID.java
+LeaderboardsID.java
+NotificationsDelegate.java
+OFCredentials.java
+ScoreSubmit.java
+
+Estos archivos son privados por razones de seguridad.
