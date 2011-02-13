@@ -16,14 +16,12 @@ import android.view.KeyEvent;
 
 import com.sloy.tictacdroide.R;
 import com.sloy.tictacdroide.components.ApplicationController;
-import com.sloy.tictacdroide.components.LoaderImageView;
 import com.sloy.tictacdroide.components.SoundManager;
 import com.sloy.tictacdroide.components.ThemeManager;
 import com.sloy.tictacdroide.components.TwitterLoginPreference;
 import com.sloy.tictacdroide.components.Utils;
 import com.sloy.tictacdroide.constants.ThemeID;
 
-import twitter4j.ProfileImage;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 
@@ -134,14 +132,14 @@ public class Opciones extends PreferenceActivity implements OnPreferenceChangeLi
 	}	
 	
 	private void twitterCheck(){
-		String title = "Log in";
-		String summary = "Conect to your Twitter account";
+		String title = getString(R.string.tw_login_title);
+		String summary = getString(R.string.tw_login_summary);
 		if(app.isAuthorized()){
 			try{
 				Twitter tw = app.getTwitter();
 	        	//Sets title and summary
-	        	title = "Log out";
-	        	summary = "You are logged in as @"+tw.getScreenName();
+	        	title = getString(R.string.tw_logout_title);
+	        	summary = String.format(getString(R.string.tw_logout_summary),tw.getScreenName());
 			}catch(TwitterException e){
 				Log.e("tictacdroide", e.getMessage());
 			}catch(IllegalStateException e){

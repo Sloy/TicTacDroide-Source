@@ -4,12 +4,12 @@
   	
   	<PreferenceScreen
   		android:key="screenEfects"
-  		android:title="Efects"
-  		android:summary="Sound, vibration and animations"
+  		android:title="@string/scEfectos"
+  		android:summary="@string/scEfectosSummary"
   		>
   		<PreferenceCategory
-		  	android:title="@string/catVibracion">
-		  	
+		  	android:title="@string/catVibracion"
+		  	>
 		  	<CheckBoxPreference
 		  		android:key="cbVibrar"
 		  		android:title="@string/cbVibrar"
@@ -19,8 +19,8 @@
 		</PreferenceCategory>
 		  	
 		<PreferenceCategory
-		  		android:title="@string/catSonidos">
-		  		
+		  		android:title="@string/catSonidos"
+		  		>
 		  		<CheckBoxPreference
 		  			android:key="cbSonido"
 		  			android:title="@string/cbSonidos"
@@ -48,23 +48,23 @@
   	
   	<PreferenceScreen
   		android:key="screenSocial"
-  		android:title="Social"
-  		android:summary="Twitter, Facebook..."
+  		android:title="@string/scSocial"
+  		android:summary="@string/scSocialSummary"
   		>
   		<PreferenceCategory
   			android:title="Twitter">
   			<com.sloy.tictacdroide.components.TwitterLoginPreference
   				android:key="twLogin"
-  				android:title="Log in"
-  				android:summary="¬¬"
+  				android:title="@string/tw_login_title"
+  				android:summary="@string/tw_login_summary"
   				android:widgetLayout="@layout/twitter_login_pref" />
   		</PreferenceCategory>
   		
   		<PreferenceCategory
-  			android:title="Facebook"
+  			android:title="@string/catFacebook"
   			>
   			<Preference
-  				android:title="Coming soon"
+  				android:title="@string/fbCominSoon"
   				/>
   			</PreferenceCategory>
   		</PreferenceScreen>
@@ -72,11 +72,11 @@
   
   	<PreferenceScreen
   		android:key="screenPersonalization"
-  		android:title="Personalization"
-  		android:summary="Themes support"
+  		android:title="@string/scPersonalizacion"
+  		android:summary="@string/scPersonalizacionSummary"
   		>
   		<PreferenceCategory
-  		android:title="@string/catThemes">
+  		android:title="@string/catYourThemes">
   		<ListPreference
   			android:key="themePackageName"
   			android:title="@string/lsThemes"
@@ -89,7 +89,4 @@
   			/>
   	</PreferenceCategory>
   	</PreferenceScreen>
-  	
-  	
-  	
 </PreferenceScreen>

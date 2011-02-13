@@ -38,22 +38,54 @@
     <string name="cbPreguntarSonidosFirst">Preguntar la próxima vez</string>
     <string name="confirmarSalir">¿Seguro que quieres salir del juego?</string>
     
-    <string name="catVibracion">Vibración</string>
-	<string name="catSonidos">Sonidos</string>
-	<string name="catThemes">Temas</string>
-	<string name="catAnimaciones">Animaciones</string>
-    <string name="cbVibrar">Activar vibración</string>
-    <string name="cbVibrarSummary">Vibrar al realizar determinadas acciones</string>
-    <string name="cbSonidos">Activar sonidos</string>
-    <string name="cbSonidosSummary">Reproducir efectos de sonido</string>
-    <string name="cbPreguntarSonidos">Preguntar al inicio</string>
-    <string name="cbPreguntarSonidosSummary">Activar o no los sonidos automaticamente al inicio</string>
-    <string name="cbAnimaciones">Activar animaciones</string>
-    <string name="cbAnimacionesSummary">Mostrar animaciones en determinadas acciones</string>
-    <string name="lsThemes">Seleccionar tema</string>
-    <string name="lsThemesSummary">Cambia el tema personalizado del juego</string>
-    <string name="dlThemesAbout">Acerca del tema</string>
-    <string name="dlThemesAboutSummary">Muestra informción acerca del tema seleccionado</string>
+    <!-- *** Opciones *** -->
+    	<!-- Efectos -->
+    	<string name="scEfectos">Efectos</string>
+    	<string name="scEfectosSummary">Sonido, vibración y animaciones</string>
+    	
+    		<!-- Vibración -->
+    		<string name="catVibracion">Vibración</string>
+    		<string name="cbVibrar">Activar vibración</string>
+    		<string name="cbVibrarSummary">Vibrar al realizar determinadas acciones</string>
+    		
+    		<!-- Sonidos -->
+			<string name="catSonidos">Sonidos</string>
+			<string name="cbSonidos">Activar sonidos</string>
+		    <string name="cbSonidosSummary">Reproducir efectos de sonido</string>
+		    <string name="cbPreguntarSonidos">Preguntar al inicio</string>
+		    <string name="cbPreguntarSonidosSummary">Activar o no los sonidos automaticamente al inicio</string>
+    		
+    		<!-- Animaciones -->
+    		<string name="catAnimaciones">Animaciones</string>
+    		<string name="cbAnimaciones">Activar animaciones</string>
+    		<string name="cbAnimacionesSummary">Mostrar animaciones en determinadas acciones</string>
+    	
+    	<!-- Social -->
+    	<string name="scSocial">Social</string>
+    	<string name="scSocialSummary">Twitter, Facebook...</string>
+    	
+    		<!-- Twitter -->
+    		<string name="catTwitter">Twitter</string>
+    		<string name="tw_login_title">Conectar</string>
+		    <string name="tw_login_summary">Conéctate con tu cuenta de Twitter</string>
+		    <string name="tw_logout_title">Desconectar</string>
+		    <string name="tw_logout_summary">Estás conectado como @%s</string>
+		    
+		    <!-- Facebook -->
+		    <string name="catFacebook">Facebook</string>
+		    <string name="fbCominSoon">Próximamente...</string>
+		    
+    	<!-- Personalización -->
+    	<string name="scPersonalizacion">Personalización</string>
+    	<string name="scPersonalizacionSummary">Soporte para temas</string>
+    	
+    		<!-- Tus temas -->
+    		<string name="catYourThemes">Tus temas</string>
+			<string name="lsThemes">Seleccionar tema</string>
+			<string name="lsThemesSummary">Cambia el tema personalizado del juego</string>
+			<string name="dlThemesAbout">Acerca del tema</string>
+   			<string name="dlThemesAboutSummary">Muestra informción acerca del tema seleccionado</string>
+    
     
     <string name="email_address">rafa.vazsan@gmail.com</string>
     <string name="email_subject">Sugerencias para TicTacDroide</string>
