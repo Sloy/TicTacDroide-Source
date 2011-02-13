@@ -3,5 +3,5 @@
 key
 bin/*
 gen/*
-res/raw/oauth.propeties
+res/raw/oauth.properties
 src/com/sloy/tictacdroide/openfeint/*.java
