@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">TicTacDroide</string>
+	<string name="app_version">2.2</string>
+	<string name="fecha_actualizacion">6/12/10</string>
+    <string name="acercaDialog_text" formatted="false">%s version at %s\n\nThe application is under constant development and updates will be issued with new features as time permits the developer to do this \n\nTicTacDroide version 1.1 was in third place in the Scenery Beta 2010.\n\nServe this humble space to thank everyone who helped me with ideas or contributions. To all of you, THANK YOU.</string>
+    <string name="TAG">TicTacDroide</string>
+    <string name="botonUnJugador">One Player</string>
+    <string name="botonDosJugadores">Two Players</string>
+    <string name="botonAcerca">About</string>
+    <string name="botonComenzarPartida">Start</string>
+    <string name="botonOpciones">Options</string>
+    <string name="botonOpenFeint">OpenFeint</string>
+    <string name="lNombre">Name:</string>
+    <string name="lDificultad">Dificulty:</string>
+    <string name="lEmpieza">Starts:</string>
+    <string name="lJugador1">Player 1:</string>
+    <string name="lJugador2">Player 2:</string>
+    <string name="dificultad_prompt">Dificulty</string>
+    <string name="acercaDialog_title">About TicTacDroid</string>
+    <string name="acercaDialog_blog">Go to blog</string>
+    <string name="acercaDialog_twitter">Go to Twitter</string>
+    <string name="acercaDialog_market">See more apps</string>
+    <string name="menu_salir">Exit</string>
+    <string name="menu_nuevaPartida">New game</string>
+    <string name="menu_volver">Back</string>
+    <string name="menu_restaurarNombres">Restore names</string>
+    <string name="Jugador">Player</string>
+    <string name="Jugador1">Froyo</string>
+    <string name="Jugador2">Éclair</string>
+    <string name="androide">Android</string>
+    <string name="alert_titulo">End of game</string>
+    <string name="alert_nueva">New game</string>
+    <string name="alert_atras">Go back</string>
+    <string name="alert_empate">Tie!</string>
+    <string name="alert_haGanado">%s wins.</string>
+    <string name="alert_score">\n\nYour score: %s</string>
+    <string name="blog">http://sloyblog.blogspot.com/</string>
+    <string name="twitter">http://twitter.com/sloy5101</string>
+    <string name="market">market://search?q=pub:Sloy</string>
+    <string name="lbActivarSonido">Activate sounds?</string>
+    <string name="Si">Yes</string>
+    <string name="No">No</string>
+    <string name="cbPreguntarSonidosFirst">Ask the next time</string>
+    <string name="confirmarSalir">Are you sure you want to quit the game?</string>
+    
+	<string name="catVibracion">Vibration</string>
+	<string name="catSonidos">Sounds</string>
+	<string name="catAnimaciones">Animations</string>
+	<string name="catThemes">Themes</string>
+    <string name="cbVibrar">Activate vibration</string>
+    <string name="cbVibrarSummary">Vibrate when doing some actions</string>
+    <string name="cbSonidos">Activate sounds</string>
+    <string name="cbSonidosSummary">Play sound effects</string>
+    <string name="cbPreguntarSonidos">Ask at start</string>
+    <string name="cbPreguntarSonidosSummary">Automatically activate or not sounds at start</string>
+    <string name="cbAnimaciones">Activate animations</string>
+    <string name="cbAnimacionesSummary">Show animations in some actions</string>
+    <string name="lsThemes">Select theme</string>
+    <string name="lsThemesSummary">Change the custom theme of the game</string>
+    <string name="dlThemesAbout">About the theme</string>
+    <string name="dlThemesAboutSummary">Show information about the theme selected</string>
+    
+    <string name="email_address">rafa.vazsan@gmail.com</string>
+    <string name="email_subject">Suggestions for TicTacDroide</string>
+    <string name="email_text">Enter your comments or suggestions as detailed as possible.\n------\n</string>
+    <string name="email_intent">Send email...</string>
+    <string name="email_warning">With this option you can send me any suggestions as I am open to them.\n\nIf you press OK it should open your email application with some predefined data where you can write what you need. I prefer this route to the coments of the Market because it allows me to answer.</string>
+    
+    <string name="alert_button_aceptar">OK</string>
+    <string name="alert_button_cancelar">Cancel</string>
+    <string name="alert_button_sugerencias">Send suggestions</string>
+    
+    <string name="internet_required">Internet conexion is required in order to use this function</string>
+</resources>

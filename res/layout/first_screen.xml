@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/linLay_FS"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:background="@drawable/background"
+    android:layout_height="fill_parent">
+    
+    <LinearLayout
+    	android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" 
+	    android:gravity="center"
+	    android:paddingTop="100dip">
+	    <!--<TextView
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="30dip"
+	    	android:text="@string/lbActivarSonido"
+	    	android:textSize="20dp"
+	    	android:layout_gravity="center_horizontal"/>
+	    <Button
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="20dip"
+	    	android:paddingLeft="50dip"
+	    	android:paddingRight="50dip"
+	    	android:id="@+id/btActivarSonidoSi"
+	    	android:text="@string/Si" />
+	    <Button
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="40dip"
+	    	android:paddingLeft="50dip"
+	    	android:paddingRight="50dip"
+	    	android:id="@+id/btActivarSonidoNo"
+	    	android:text="@string/No" /> -->
+	     <LinearLayout
+	     	android:layout_width="wrap_content"
+	     	android:layout_height="wrap_content"
+	     	android:orientation="vertical"
+	     	android:layout_gravity="center"
+	     	>
+	     	
+	     	<CheckBox 
+		     	android:id="@+id/cbActivarSonidos"
+		     	android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:layout_gravity="left"
+		     	android:layout_marginBottom="30dip"
+		     	android:text="@string/cbSonidos"
+		     	android:checked="true" />
+	     		
+	     	<CheckBox 
+		     	android:id="@+id/cbActivarVibracion"
+		     	android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:layout_gravity="left"
+		     	android:text="@string/cbVibrar"
+		     	android:checked="true" />
+		     	
+		     <!--<CheckBox android:id="@+id/cbPreguntarSonidos"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="left"
+		        android:text="@string/cbPreguntarSonidosFirst"
+		        android:checked="true"/> -->
+		        
+		    <Button 
+		    	android:id="@+id/btFirstGo"
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginTop="50dip"
+		    	android:text="@android:string/ok"
+		    	android:gravity="center"
+		    />
+		        
+		 </LinearLayout>	
+	     
+	     
+	</LinearLayout>
+    
+</LinearLayout>

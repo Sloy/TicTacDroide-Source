@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  	
+  	<PreferenceScreen
+  		android:key="screenEfects"
+  		android:title="Efects"
+  		android:summary="Sound, vibration and animations"
+  		>
+  		<PreferenceCategory
+		  	android:title="@string/catVibracion">
+		  	
+		  	<CheckBoxPreference
+		  		android:key="cbVibrar"
+		  		android:title="@string/cbVibrar"
+		  		android:summary="@string/cbVibrarSummary"
+		  		android:defaultValue="true" />
+		  		
+		</PreferenceCategory>
+		  	
+		<PreferenceCategory
+		  		android:title="@string/catSonidos">
+		  		
+		  		<CheckBoxPreference
+		  			android:key="cbSonido"
+		  			android:title="@string/cbSonidos"
+		  			android:summary="@string/cbSonidosSummary"
+		  			android:defaultValue="true"/>
+		  			
+		  		<CheckBoxPreference
+		  			android:key="cbPreguntarSonidos"
+		  			android:title="@string/cbPreguntarSonidos"
+		  			android:summary="@string/cbPreguntarSonidosSummary"
+		  			android:defaultValue="true"/>
+		 </PreferenceCategory>
+		  	
+		 <PreferenceCategory
+		  		android:title="@string/catAnimaciones">
+		  		
+		  		<CheckBoxPreference
+		  			android:key="cbAnimaciones"
+		  			android:title="@string/cbAnimaciones"
+		  			android:summary="@string/cbAnimacionesSummary"
+		  			android:defaultValue="true"/>
+		  		
+		 </PreferenceCategory>
+  	</PreferenceScreen>
+  	
+  	<PreferenceScreen
+  		android:key="screenSocial"
+  		android:title="Social"
+  		android:summary="Twitter, Facebook..."
+  		>
+  		<PreferenceCategory
+  			android:title="Twitter">
+  			<com.sloy.tictacdroide.components.TwitterLoginPreference
+  				android:key="twLogin"
+  				android:title="Log in"
+  				android:summary="¬¬"
+  				android:widgetLayout="@layout/twitter_login_pref" />
+  		</PreferenceCategory>
+  		
+  		<PreferenceCategory
+  			android:title="Facebook"
+  			>
+  			<Preference
+  				android:title="Coming soon"
+  				/>
+  			</PreferenceCategory>
+  		</PreferenceScreen>
+  
+  
+  	<PreferenceScreen
+  		android:key="screenPersonalization"
+  		android:title="Personalization"
+  		android:summary="Themes support"
+  		>
+  		<PreferenceCategory
+  		android:title="@string/catThemes">
+  		<ListPreference
+  			android:key="themePackageName"
+  			android:title="@string/lsThemes"
+  			android:summary="@string/lsThemesSummary"	
+  			/>
+  		<Preference
+  			android:key="dlThemesAbout"
+  			android:title="@string/dlThemesAbout"
+  			android:summary="@string/dlThemesAboutSummary"
+  			/>
+  	</PreferenceCategory>
+  	</PreferenceScreen>
+  	
+  	
+  	
+</PreferenceScreen>

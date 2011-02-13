@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:myapp="http://schemas.android.com/apk/res/com.sloy.tictacdroide"
+	android:id="@+id/linLay_P"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:gravity="center_horizontal"
+	android:background="@drawable/background"
+	android:layout_height="fill_parent">
+	
+	<!--  Título -->
+    <LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="2"
+    	>
+    	<ImageView
+    		android:id="@+id/imgTitulo"
+    		android:background="#00000000"
+	    	android:src="@drawable/title"
+	    	android:scaleType="centerInside"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_weight="2" />
+	</LinearLayout>
+	
+	<!-- Cuerpo -->
+	<TableLayout 
+		android:id="@+id/tablero" 
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:background="@drawable/board"
+		>
+		<TableRow 
+			android:layout_width="fill_parent" 
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			>
+			<ImageButton 
+				android:id="@+id/cas00" 
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_margin="10dp"
+				android:scaleType="centerInside"
+				android:src="@drawable/player_none"
+				android:background="#00000000"
+			/>
+			<ImageButton 
+				android:id="@+id/cas01" 
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_margin="10dp"
+				android:scaleType="centerInside"
+				android:src="@drawable/player_none"
+				android:background="#00000000"
+			/>
+			<ImageButton
+				android:id="@+id/cas02" 
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_margin="10dp"
+				android:scaleType="centerInside"
+				android:src="@drawable/player_none"
+				android:background="#00000000"
+			/>
+		</TableRow>
+	
+		<TableRow 
+			android:layout_width="fill_parent" 
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			>
+			<ImageButton 
+				android:id="@+id/cas10" 
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_margin="10dp"
+				android:scaleType="centerInside"
+				android:src="@drawable/player_none"
+				android:background="#00000000"
+			/>
+			<ImageButton 
+				android:id="@+id/cas11" 
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_margin="10dp"
+				android:scaleType="centerInside"
+				android:src="@drawable/player_none"
+				android:background="#00000000"
+			/>
+			<ImageButton 
+				android:id="@+id/cas12" 
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_margin="10dp"
+				android:scaleType="centerInside"
+				android:src="@drawable/player_none"
+				android:background="#00000000"
+			/>
+		</TableRow>
+	
+		<TableRow 
+			android:layout_width="fill_parent" 
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			>
+			<ImageButton 
+				android:id="@+id/cas20" 
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_margin="10dp"
+				android:scaleType="centerInside"
+				android:src="@drawable/player_none"
+				android:background="#00000000"
+			/>
+			<ImageButton 
+				android:id="@+id/cas21" 
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_margin="10dp"
+				android:scaleType="centerInside"
+				android:src="@drawable/player_none"
+				android:background="#00000000"
+			/>
+			<ImageButton 
+				android:id="@+id/cas22" 
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_margin="10dp"
+				android:scaleType="centerInside"
+				android:src="@drawable/player_none"
+				android:background="#00000000"
+			/>
+		</TableRow>
+	</TableLayout>
+	
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="2"
+		>
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			android:gravity="center"
+			>
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+				<ImageView
+					android:id="@+id/imgJugador1"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:src="@drawable/player_x" />
+				<com.sloy.tictacdroide.components.MyTextView
+					android:id="@+id/lbSeparator1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="30sp"
+					android:layout_gravity="center_vertical"
+					android:text=":" />
+				<com.sloy.tictacdroide.components.MyTextView
+					android:id="@+id/countJugador1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="30sp"
+					android:layout_gravity="center_vertical"
+					android:text="0" />
+			</LinearLayout>	
+							
+			<com.sloy.tictacdroide.components.MyTextView
+				android:id="@+id/lbJugador1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textStyle="bold"
+				android:layout_gravity="center_horizontal" />
+		</LinearLayout>
+		
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:layout_weight="1"
+			>
+			<com.sloy.tictacdroide.components.MyTextView
+				android:id="@+id/lbVS"
+				android:text=" VS "
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:textSize="40dp" />
+			<com.sloy.tictacdroide.components.MyTextView
+				android:id="@+id/countEmpate"
+				android:text="0"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:textSize="20dp" />
+		</LinearLayout>
+			
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			android:gravity="center"
+			>
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+				<ImageView
+					android:id="@+id/imgJugador2"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:src="@drawable/player_o" />
+				<com.sloy.tictacdroide.components.MyTextView
+					android:id="@+id/lbSeparator2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="30sp"
+					android:layout_gravity="center_vertical"
+					android:text=":" />
+				<com.sloy.tictacdroide.components.MyTextView
+					android:id="@+id/countJugador2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="30sp"
+					android:layout_gravity="center_vertical"
+					android:text="0" />
+			</LinearLayout>						
+			<com.sloy.tictacdroide.components.MyTextView
+				android:id="@+id/lbJugador2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textStyle="bold"
+				android:layout_gravity="center_horizontal" />
+		</LinearLayout>
+			
+	</LinearLayout>
+	
+	<!-- Anuncios -->
+    <LinearLayout
+             android:orientation="horizontal"
+			 android:id="@+id/LinearLayout03"
+             android:layout_width="fill_parent" 
+             android:layout_height="wrap_content"
+             ><!--
+            <ImageView
+		    	android:src="@drawable/ads"
+		    	android:scaleType="centerInside"
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content" /> 
+            --> <com.admob.android.ads.AdView 
+             		android:id="@+id/ad"
+                     android:layout_width="fill_parent" 
+                     android:layout_height="wrap_content"
+                     android:visibility="gone"
+                     myapp:backgroundColor="#000000" 
+                     myapp:primaryTextColor="#FFFFFF"
+                     myapp:secondaryTextColor="#CCCCCC" 
+                     android:layout_gravity="bottom"> 
+             </com.admob.android.ads.AdView>
+    </LinearLayout>
+
+</LinearLayout>

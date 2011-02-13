@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+	xmlns:myapp="http://schemas.android.com/apk/res/com.sloy.tictacdroide"
+	android:id="@+id/linLay_M2"
+	android:background="@drawable/background"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" >
+	
+	<!--  Título -->
+    <LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="3"
+    	>
+    	<ImageView
+    		android:id="@+id/imgTitulo"
+    		android:background="#00000000"
+	    	android:src="@drawable/title"
+	    	android:scaleType="centerInside"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"/>
+	</LinearLayout>
+	  
+	  <!-- Cuerpo -->	
+	 <LinearLayout
+    	android:orientation="vertical"
+    	android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="2"
+		android:paddingLeft="30dp"
+    	android:paddingRight="30dp" >
+  		
+	  	<LinearLayout
+	  		android:orientation="horizontal"
+	  		android:layout_width="fill_parent"
+	  		android:layout_height="fill_parent"
+	  		android:layout_weight="1" 
+	  		>
+	  		<com.sloy.tictacdroide.components.MyTextView
+	  			android:id="@+id/lbNombreJugador1"
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:paddingRight="30dp"
+	  			android:textStyle="bold"
+	  			android:text="@string/lJugador1" />
+	  		<EditText
+	  			android:id="@+id/txtNombreJugador1"
+	  			android:layout_width="fill_parent"
+	  			android:layout_height="wrap_content"
+	  			android:background="@drawable/textfield_green"
+	  			android:maxLines="1"
+	  			android:text="@string/Jugador1" />
+	  	</LinearLayout> 	
+	  	<LinearLayout
+	  		android:orientation="horizontal"
+	  		android:layout_width="fill_parent"
+	  		android:layout_height="fill_parent"
+	  		android:layout_weight="1" 
+	  		>
+	  		<com.sloy.tictacdroide.components.MyTextView
+	  			android:id="@+id/lbNombreJugador2"
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:paddingRight="30dp"
+	  			android:textStyle="bold"
+	  			android:text="@string/lJugador2" />
+	  		<EditText
+	  			android:id="@+id/txtNombreJugador2"
+	  			android:layout_width="fill_parent"
+	  			android:layout_height="wrap_content"
+	  			android:maxLines="1"
+	  			android:background="@drawable/textfield_red"
+	  			android:text="@string/Jugador2" />
+	  	</LinearLayout> 
+	  	<LinearLayout
+	  		android:orientation="horizontal"
+	  		android:layout_width="fill_parent"
+	  		android:layout_height="fill_parent"
+	  		android:layout_weight="1"  
+	  		>  		
+	  		<com.sloy.tictacdroide.components.MyTextView
+	  			android:id="@+id/lbEmpieza"
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:paddingRight="15dp"
+	  			android:textStyle="bold"
+	  			android:text="@string/lEmpieza"
+	  			android:layout_gravity="center_vertical" />
+  		    <RadioGroup
+		      android:layout_width="fill_parent"
+		      android:layout_height="wrap_content"
+		      android:orientation="horizontal"
+		      >
+		      <RadioButton 
+		      	  android:id="@+id/rbX"
+		          android:layout_width="fill_parent"
+		          android:layout_height="wrap_content"
+		          android:layout_weight="1"
+		          android:button="@drawable/radio_x"
+		          android:paddingRight="4dp" />
+		      <RadioButton 
+				  android:id="@+id/rbO"
+		          android:layout_width="fill_parent"
+		          android:layout_height="wrap_content"
+		          android:layout_weight="1"
+		          android:button="@drawable/radio_o"
+		          android:paddingRight="4dp" />
+		      <RadioButton 
+				  android:id="@+id/rbRand"
+		          android:layout_width="fill_parent"
+		          android:layout_height="wrap_content"
+		          android:layout_weight="1"
+		          android:button="@drawable/radio_r"
+		          android:text="↔"
+		          android:checked="true"/>
+		    </RadioGroup>
+	  	</LinearLayout>  	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+	    	android:orientation="horizontal"
+	    	android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_weight="3"
+			android:paddingBottom="20dip"
+	    	>
+	    	<ImageButton
+	    		android:id="@+id/bComenzarPartida"
+	    		android:background="#00000000"
+		    	android:src="@drawable/btn_start"
+		    	android:scaleType="centerInside"
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"/>
+		</LinearLayout>
+	
+	<!-- Anuncios -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        >
+       <!--<ImageView
+	    	android:src="@drawable/ads"
+	    	android:scaleType="centerInside"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content" /> 
+         <com.admob.android.ads.AdView 
+        		android:id="@+id/ad"
+                android:layout_width="fill_parent" 
+                android:layout_height="wrap_content"
+                myapp:backgroundColor="#000000" 
+                myapp:primaryTextColor="#FFFFFF"
+                myapp:secondaryTextColor="#CCCCCC" 
+                android:layout_gravity="bottom"> 
+        </com.admob.android.ads.AdView>-->
+    </LinearLayout>
+	
+</LinearLayout>

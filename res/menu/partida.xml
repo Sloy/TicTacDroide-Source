@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item
+		android:icon="@drawable/ic_menu_refresh"
+		android:title="@string/menu_nuevaPartida"
+		android:id="@+id/menu_nuevaPartida"
+		android:orderInCategory="1" />
+	<item 
+		android:icon="@android:drawable/ic_menu_revert"
+		android:title="@string/menu_volver"
+		android:id="@+id/menu_volver"
+		android:orderInCategory="2" />
+	<item 
+		android:icon="@android:drawable/ic_menu_close_clear_cancel"
+		android:title="@string/menu_salir" 
+		android:id="@+id/menu_salir"
+		android:orderInCategory="3" />
+</menu>
