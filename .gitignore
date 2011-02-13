@@ -1,0 +1,7 @@
+.classpath
+.project
+key
+bin/*
+gen/*
+res/raw/oauth.propeties
+src/com/sloy/tictacdroide/openfeint/*.java
