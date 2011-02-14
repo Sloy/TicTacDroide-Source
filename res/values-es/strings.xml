@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="acercaDialog_text" formatted="false">Versión %s a %s\n\nLa aplicación sigue en constante desarrollo y se publicarán actualizaciones con nuevas funcionalidades según el tiempo disponible por el desarrollador para tal.\n\nTicTacDroide versión 1.1 quedó en tercer puesto en el Scenery Beta 2010.\n\nSirva este humilde espacio para agradecer a todos los que me han ayudado con sus ideas o aportaciones. A todos vosotros, GRACIAS.</string>
+    <string name="TAG">TicTacDroide</string>
+    <string name="botonUnJugador">Un Jugador</string>
+    <string name="botonDosJugadores">Dos Jugadores</string>
+    <string name="botonAcerca">Acerca de</string>
+    <string name="botonComenzarPartida">Comenzar partida</string>
+    <string name="botonOpciones">Opciones</string>
+    <string name="lNombre">Nombre:</string>
+    <string name="lDificultad">Dificultad:</string>
+    <string name="lEmpieza">Empieza:</string>
+    <string name="lJugador1">Jugador 1:</string>
+    <string name="lJugador2">Jugador 2:</string>
+    <string name="dificultad_prompt">Dificultad</string>
+    <string name="acercaDialog_title">Acerca de TicTacDroid</string>
+    <string name="acercaDialog_blog">Ver blog</string>
+    <string name="acercaDialog_twitter">Ver Twitter</string>
+    <string name="acercaDialog_market">Ver más apps</string>
+    <string name="menu_salir">Salir</string>
+    <string name="menu_nuevaPartida">Nueva partida</string>
+    <string name="menu_volver">Volver</string>
+    <string name="menu_restaurarNombres">Restaurar nombres</string>
+    <string name="Jugador">Jugador</string>
+    <string name="Jugador1">Froyo</string>
+    <string name="Jugador2">Éclair</string>
+    <string name="androide">Androide</string>
+    <string name="alert_titulo">Fin de la partida</string>
+    <string name="alert_nueva">Nueva partida</string>
+    <string name="alert_atras">Volver atrás</string>
+    <string name="alert_empate">Empate!</string>
+    <string name="alert_haGanado">Ha ganado %s.</string>
+    <string name="alert_score">\n\nTu puntuación: %s</string>
+    <string name="lbActivarSonido">¿Activar sonidos?</string>
+    <string name="Si">Sí</string>
+    <string name="No">No</string>
+    <string name="cbPreguntarSonidosFirst">Preguntar la próxima vez</string>
+    <string name="confirmarSalir">¿Seguro que quieres salir del juego?</string>
+    
+    <!-- *** Opciones *** -->
+    	<!-- Efectos -->
+    	<string name="scEfectos">Efectos</string>
+    	<string name="scEfectosSummary">Sonido, vibración y animaciones</string>
+    	
+    		<!-- Vibración -->
+    		<string name="catVibracion">Vibración</string>
+    		<string name="cbVibrar">Activar vibración</string>
+    		<string name="cbVibrarSummary">Vibrar al realizar determinadas acciones</string>
+    		
+    		<!-- Sonidos -->
+			<string name="catSonidos">Sonidos</string>
+			<string name="cbSonidos">Activar sonidos</string>
+		    <string name="cbSonidosSummary">Reproducir efectos de sonido</string>
+		    <string name="cbPreguntarSonidos">Preguntar al inicio</string>
+		    <string name="cbPreguntarSonidosSummary">Activar o no los sonidos automaticamente al inicio</string>
+    		
+    		<!-- Animaciones -->
+    		<string name="catAnimaciones">Animaciones</string>
+    		<string name="cbAnimaciones">Activar animaciones</string>
+    		<string name="cbAnimacionesSummary">Mostrar animaciones en determinadas acciones</string>
+    	
+    	<!-- Social -->
+    	<string name="scSocial">Social</string>
+    	<string name="scSocialSummary">Twitter, Facebook...</string>
+    	
+    		<!-- Twitter -->
+    		<string name="catTwitter">Twitter</string>
+    		<string name="tw_login_title">Conectar</string>
+		    <string name="tw_login_summary">Conéctate con tu cuenta de Twitter</string>
+		    <string name="tw_logout_title">Desconectar</string>
+		    <string name="tw_logout_summary">Estás conectado como @%s</string>
+		    
+		    <!-- Facebook -->
+		    <string name="catFacebook">Facebook</string>
+		    <string name="fbCominSoon">Próximamente...</string>
+		    
+    	<!-- Personalización -->
+    	<string name="scPersonalizacion">Personalización</string>
+    	<string name="scPersonalizacionSummary">Soporte para temas</string>
+    	
+    		<!-- Tus temas -->
+    		<string name="catYourThemes">Tus temas</string>
+			<string name="lsThemes">Seleccionar tema</string>
+			<string name="lsThemesSummary">Cambia el tema personalizado del juego</string>
+			<string name="dlThemesAbout">Acerca del tema</string>
+   			<string name="dlThemesAboutSummary">Muestra informción acerca del tema seleccionado</string>
+    
+    
+    <string name="email_address">rafa.vazsan@gmail.com</string>
+    <string name="email_subject">Sugerencias para TicTacDroide</string>
+    <string name="email_text">Escribe a continuación tu comentario o sugerencia lo más detallado posible.\n------\n</string>
+    <string name="email_intent">Enviar email...</string>
+    <string name="email_warning">Con esta opción puedes enviarme cualquier tipo de sugerencias pues estoy abierto a ellas. \n\nSi pulsas aceptar debería abrirse tu aplicación de email con algunos datos preestablecidos donde puedes escribir lo que necesites. Prefiero esta vía a los comentarios del Market porque me permite contestar.</string>
+    
+    <string name="alert_button_aceptar">Aceptar</string>
+    <string name="alert_button_cancelar">Cancelar</string>
+    <string name="alert_button_sugerencias">Enviar sugerencias</string>
+    
+    <string name="internet_required">Se requiere conexión a Internet para usar esta función</string>
+    
+</resources>
