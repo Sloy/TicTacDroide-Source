@@ -97,9 +97,7 @@ containing a value of this type.
         public static final int yellow=0x7f020010;
     }
     public static final class id {
-        public static final int fs_gana_img=0x7f0a0001;
-        public static final int fs_gana_text=0x7f0a0000;
-        public static final int text3=0x7f0a0002;
+        public static final int fs_gana_img=0x7f0a0000;
     }
     public static final class layout {
         public static final int final_screen=0x7f030000;
