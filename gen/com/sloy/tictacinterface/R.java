@@ -75,29 +75,31 @@ containing a value of this type.
         public static final int text_color=0x7f070005;
     }
     public static final class drawable {
-        public static final int blue=0x7f02000e;
-        public static final int end_o=0x7f020000;
-        public static final int end_tie=0x7f020001;
-        public static final int end_x=0x7f020002;
-        public static final int green=0x7f02000f;
-        public static final int icon=0x7f020003;
-        public static final int of_achievement_icon_frame=0x7f020004;
-        public static final int of_achievement_notification_bkg=0x7f020005;
-        public static final int of_icon_dashboard_exit=0x7f020006;
-        public static final int of_icon_dashboard_home=0x7f020007;
-        public static final int of_icon_dashboard_settings=0x7f020008;
-        public static final int of_notification_bkg=0x7f020009;
-        public static final int overscroll_edge=0x7f02000a;
-        public static final int panel_background=0x7f02000b;
-        public static final int red=0x7f02000d;
-        public static final int screen_background_black=0x7f020011;
-        public static final int title_bar_shadow=0x7f02000c;
-        public static final int translucent_background=0x7f020012;
-        public static final int transparent_background=0x7f020013;
-        public static final int yellow=0x7f020010;
+        public static final int blue=0x7f02000f;
+        public static final int edit_text=0x7f020000;
+        public static final int end_o=0x7f020001;
+        public static final int end_tie=0x7f020002;
+        public static final int end_x=0x7f020003;
+        public static final int green=0x7f020010;
+        public static final int icon=0x7f020004;
+        public static final int overscroll_edge=0x7f020005;
+        public static final int panel_background=0x7f020006;
+        public static final int red=0x7f02000e;
+        public static final int screen_background_black=0x7f020012;
+        public static final int textfield_activated_holo_dark=0x7f020007;
+        public static final int textfield_default=0x7f020008;
+        public static final int textfield_disabled=0x7f020009;
+        public static final int textfield_disabled_selected=0x7f02000a;
+        public static final int textfield_pressed=0x7f02000b;
+        public static final int textfield_selected=0x7f02000c;
+        public static final int title_bar_shadow=0x7f02000d;
+        public static final int translucent_background=0x7f020013;
+        public static final int transparent_background=0x7f020014;
+        public static final int yellow=0x7f020011;
     }
     public static final class id {
-        public static final int fs_gana_img=0x7f0a0000;
+        public static final int fs_gana_img=0x7f0a0001;
+        public static final int fs_gana_text=0x7f0a0000;
     }
     public static final class layout {
         public static final int final_screen=0x7f030000;

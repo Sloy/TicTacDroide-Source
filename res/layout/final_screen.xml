@@ -3,6 +3,7 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:orientation="vertical"
+	android:padding="10dip"
 	>
 	<LinearLayout
 		android:orientation="horizontal"
@@ -16,11 +17,12 @@
 		    android:layout_height="fill_parent"
 		    android:layout_weight="1"
 		    android:gravity="center_vertical|center_horizontal"
-		    android:text="Ha ganado tu padre"
+		    android:text="Sloy gana"
 		    android:textAppearance="@style/TextFinalScreen"
 		    android:singleLine="true"
-		    android:scrollHorizontally="false"
-	    	android:ellipsize="middle"/>
+		    android:scrollHorizontally="true"
+		    android:ellipsize="middle"
+	    	/>
 	    <ImageView
 	    	android:id="@+id/fs_gana_img"
 	    	android:layout_width="fill_parent" 
@@ -36,30 +38,58 @@
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_weight="1"
+		android:layout_marginTop="20dip"
+		android:layout_marginBottom="20dip"
 		>
 		<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:layout_weight="1"
+			android:gravity="center"
 			>
 			<TextView
-				android:layout_width="fill_parent"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Tu puntuación"
+				android:textAppearance="@style/TextFinalScreen"
 				/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:layout_gravity="center"
+				android:minWidth="20dip"
+				android:enabled="true"
+				android:text="666"
+				android:textColor="@android:color/primary_text_dark"
+				android:background="@drawable/textfield_activated_holo_dark"
+			/>
 		</LinearLayout>
 		<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
+			android:layout_height="wrap_content"
 			android:layout_weight="1"
+			android:gravity="center"
 			>
 			<TextView
-				android:layout_width="fill_parent"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Mejor"
+				android:textAppearance="@style/TextFinalScreen"
 				/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_gravity="center"
+				android:minWidth="20dip"
+				android:enabled="true"
+				android:text="1500"
+				android:textColor="@android:color/primary_text_dark"
+				android:background="@drawable/textfield_activated_holo_dark"
+			/>
 		</LinearLayout>
 	</LinearLayout>
 	
@@ -68,14 +98,39 @@
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_weight="1"
+		android:gravity="center"
 		>
-		<TextView  
-			android:id="@+id/text3"
-		    android:layout_width="fill_parent" 
-		    android:layout_height="fill_parent"
-		    android:gravity="center_vertical|center_horizontal"
-		    android:text="Disse"
-	    />
+		<LinearLayout 
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			>
+			<Button
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:text="Nueva partida"
+			/>
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="3"
+				>
+				<Button
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:layout_weight="1"
+					android:text="Volver"
+					/>
+				<Button
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:layout_weight="1"
+					android:text="Menú"
+					/>
+		</LinearLayout>
+		</LinearLayout>
 	</LinearLayout>
 	
 	
