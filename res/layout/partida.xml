@@ -271,7 +271,7 @@
 		    	android:layout_height="wrap_content" /> 
             --> <com.admob.android.ads.AdView 
              		android:id="@+id/ad"
-                     android:layout_width="fill_parent" 
+                     android:layout_width="fill_parent"
                      android:layout_height="wrap_content"
                      android:visibility="gone"
                      myapp:backgroundColor="#000000" 

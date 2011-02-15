@@ -18,25 +18,20 @@
 	<style name="Theme" parent="android:Theme">
     </style>
     
-    <!-- A theme that has a translucent background.  Here we explicitly specify
-         that this theme is to inherit from the system's translucent theme,
-         which sets up various attributes correctly. -->
-    <style name="Theme.Translucent" parent="android:style/Theme.Translucent">
-        <item name="android:windowBackground">@drawable/translucent_background</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:colorForeground">#fff</item>
+    <style name="Theme.FinalDialog" parent="android:style/Theme.Dialog">
+       <item name="android:windowBackground">@drawable/panel_background</item>
+       <item name="android:windowNoTitle">false</item>
+       <item name="android:windowIsFloating">true</item>
+       <item name="android:windowContentOverlay">@drawable/title_bar_shadow</item>
+       <item name="android:textAppearance">@style/TextFinalScreen</item>
     </style>
-
-    <!-- Variation on our application theme that has a transparent
-         background; this example completely removes the background,
-         allowing the activity to decide how to composite.  Also here we
-         force the translucency ourself rather than making use of the built-in
-         translucent theme. -->
-    <style name="Theme.Transparent">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
-        <item name="android:windowBackground">@drawable/transparent_background</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:colorForeground">#fff</item>
+    
+    <style name="TextFinalScreen">
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+        <item name="android:textColorHighlight">#FFFF9200</item>
+        <item name="android:textColorHint">#FF000000</item>
+        <item name="android:textColorLink">#5C5CFF</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

@@ -2,13 +2,10 @@ package com.sloy.tictacdroide.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -117,7 +114,6 @@ public class MenuPrincipal extends Activity {
 			public void onClick(View v) {
 				Utils.vibrar(getApplicationContext(), Utils.CORTO);
 				startActivityForResult(new Intent(getApplicationContext(),com.sloy.tictacdroide.activities.MenuDosJugadores.class), 123);
-//				startActivity(new Intent(getApplicationContext(),com.srv.tictacdroide.Resultados.class));
 				SoundManager.playSound(SoundManager.NAVEGAR);
 			}
 		});
@@ -149,7 +145,13 @@ public class MenuPrincipal extends Activity {
 			@Override
 			public void onClick(View v) {
 				Utils.vibrar(getApplicationContext(), Utils.CORTO);
-				alert.show();
+//				alert.show();
+				Intent dialogLauncher = new Intent(getApplicationContext(), com.sloy.tictacdroide.activities.FinalScreen.class);
+				dialogLauncher.putExtra(FinalScreen.ESTADO_INT, 0);
+				dialogLauncher.putExtra(FinalScreen.GANADOR_STR, "Sloy");
+				dialogLauncher.putExtra(FinalScreen.PUNTUACION_1_INT, 666);
+				dialogLauncher.putExtra(FinalScreen.DIFICULTAD_INT, 5);
+				startActivityForResult(dialogLauncher, FinalScreen.REQUEST_CODE);
 				SoundManager.playSound(SoundManager.NAVEGAR);
 			}
 		});

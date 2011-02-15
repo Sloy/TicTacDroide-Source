@@ -36,9 +36,9 @@
         </activity>
         
         <activity 
-        	android:name="com.sloy.tictacdroide.activities.Resultados" 
+        	android:name="com.sloy.tictacdroide.activities.FinalScreen" 
         	android:label="@string/app_name"
-        	android:theme="@style/Theme.Translucent" 
+        	android:theme="@style/Theme.FinalDialog" 
         	android:screenOrientation="portrait"
         	>
         </activity>
@@ -58,7 +58,6 @@
 		</activity>
 		
 		<activity 
-			android:theme="@android:style/Theme" 
 			android:name="com.sloy.tictacdroide.activities.Opciones" 
 			android:screenOrientation="portrait"
 			android:label="@string/botonOpciones">
