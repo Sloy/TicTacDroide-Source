@@ -1,6 +1,7 @@
 package com.sloy.tictacdroide.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,10 +15,12 @@ import android.widget.Toast;
 
 import com.sloy.tictacdroide.R;
 import com.sloy.tictacdroide.components.ApplicationController;
+import com.sloy.tictacdroide.components.StatisticsDBAdapter;
 import com.sloy.tictacdroide.components.Utils;
 import com.sloy.tictacdroide.constants.Codes.Results;
 
 import twitter4j.Twitter;
+import twitter4j.TwitterException;
 
 
 public class FinalScreen extends Activity {
@@ -36,6 +39,8 @@ public class FinalScreen extends Activity {
 	private Integer puntuacion1;
 	private Integer punuacion2;
 	private int dificultad;
+	
+	private boolean tweeted = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -97,9 +102,11 @@ public class FinalScreen extends Activity {
         	// Pone los títulos de las puntuaciones
         	((TextView)findViewById(R.id.fs_puntuacion_1_title)).setText("Tu puntuación:");
         	((TextView)findViewById(R.id.fs_puntuacion_2_title)).setText("Mejor:");
-        	// Pone en la puntuación 2 la mejor
-        	//TODO: sacar de la BD la mejor puntuación (de esta dificultad)
-        	((TextView)findViewById(R.id.fs_puntuacion_2)).setText("???");
+        	StatisticsDBAdapter mDbHelper = new StatisticsDBAdapter(this);
+            mDbHelper.open();
+            Integer best = mDbHelper.getBestScore(dificultad);
+            mDbHelper.close();
+        	((TextView)findViewById(R.id.fs_puntuacion_2)).setText(best.toString());
         }
         // Pone la puntuación del Jugador 1
         ((TextView)findViewById(R.id.fs_puntuacion_1)).setText(puntuacion1.toString());
@@ -125,13 +132,20 @@ public class FinalScreen extends Activity {
 			break;
 		}
         //ivGanador.setImageDrawable(drw);
-        ivGanador.setImageResource(resID);
-        
-        
-        
-                
+        ivGanador.setImageResource(resID);              
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		// Comprueba el estado de Twitter y actualiza el icono
+		if(((ApplicationController)getApplication()).isAuthorized()){
+			((ImageButton)findViewById(R.id.fs_share_twitter)).setImageResource(R.drawable.ic_twitter);
+		}else{
+			((ImageButton)findViewById(R.id.fs_share_twitter)).setImageResource(R.drawable.ic_twitter_disabled);
+		}
+	}
+
 	private void nuevaPartida(){
 		setResult(Results.NUEVA_PARTIDA);
 		finish();
@@ -148,13 +162,17 @@ public class FinalScreen extends Activity {
 	}
 	
 	private void compartir(){
+		if(tweeted){
+			Toast.makeText(this, "Ya lo has mandado, macho", Toast.LENGTH_SHORT).show();
+			return;
+		}
 		/* Twitea el resultado */
-		//TODO: ojo chaval
 		if(dificultad!=0){
 			ApplicationController app = (ApplicationController) getApplication();
 			if(!app.isAuthorized()){
-				//TODO: Que te mande a las opciones a conectarte
+				startActivity(new Intent(getApplicationContext(), com.sloy.tictacdroide.activities.TwitterAuthorizationActivity.class));
 				Toast.makeText(this, "Debes conectarte antes a Twitter", Toast.LENGTH_SHORT).show();
+				return;
 			}
 			Twitter tw = app.getTwitter();
 			String resVerbal="";
@@ -171,15 +189,20 @@ public class FinalScreen extends Activity {
 			}
 			String lvVerbal = getResources().getStringArray(R.array.dificultad)[dificultad-1];
 			
-			String status = "d sloy5101 [Prueba] He "+resVerbal+" a #TicTacDroide en nivel "+lvVerbal+" con una puntuación de "+puntuacion1;
+			String status = "d sloy5101 He "+resVerbal+" a #TicTacDroide en nivel "+lvVerbal+" con una puntuación de "+puntuacion1+" - For #android in http://kcy.me/1zck";
 			if(status.length()<=140){
-				//tw.updateStatus(status);
-				Toast.makeText(this, "Tweet sent", Toast.LENGTH_SHORT).show();
-				Utils.vibrar(this, Utils.CORTO);
+				try {
+					tw.updateStatus(status);
+					Toast.makeText(this, "Tweet sent", Toast.LENGTH_SHORT).show();
+					Utils.vibrar(this, Utils.CORTO);
+					tweeted=true;
+				} catch (TwitterException e) {
+					e.printStackTrace();
+				}
+				
 			}else{
 				Log.e("tictacdroide", "Error: Demasiado largo, bro");
 			}
 		}
 	}
-
 }
