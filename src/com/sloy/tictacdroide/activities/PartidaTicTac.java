@@ -33,6 +33,8 @@ import com.sloy.tictacdroide.components.ThemeManager;
 import com.sloy.tictacdroide.components.Utils;
 import com.sloy.tictacdroide.constants.AnimationsID;
 import com.sloy.tictacdroide.constants.ThemeID;
+import com.sloy.tictacdroide.constants.Codes.Requests;
+import com.sloy.tictacdroide.constants.Codes.Results;
 import com.sloy.tictacdroide.openfeint.AchievementsChecker;
 import com.sloy.tictacdroide.openfeint.AchievementsID;
 import com.sloy.tictacdroide.openfeint.ScoreSubmit;
@@ -555,7 +557,7 @@ public class PartidaTicTac extends Activity implements OnClickListener {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-            	startActivityForResult(dialogLauncher, FinalScreen.REQUEST_CODE);
+            	startActivityForResult(dialogLauncher, Requests.FINAL_SCREEN);
             }
         }, DELAY_PARTIDA); 
         
@@ -567,7 +569,7 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 	}
 	
 	private void cierraJuego(){
-		setResult(321);
+		setResult(Results.SALIR);
 		finish();
 	}
 	
@@ -579,18 +581,21 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if(requestCode == FinalScreen.REQUEST_CODE){
+		if(requestCode == Requests.FINAL_SCREEN){
 			// Comprueba la acción que desea hacer el usuario
 			switch (resultCode) {
-			case FinalScreen.RESULT_NUEVA:
+			case Results.NUEVA_PARTIDA:
 				nuevaPartida();
 				break;
-			case FinalScreen.RESULT_VOLVER:
-				finish();
+			case Results.MENU_PARTIDA:
+				cierraPartida();
 				break;
-			case FinalScreen.RESULT_MENU:
-				Toast.makeText(this, "Aún no disponible :(", Toast.LENGTH_SHORT).show();
+			case Results.MENU_PRINCIPAL:
+				setResult(Results.MENU_PRINCIPAL);
+				cierraPartida();
 				break;
+			case Results.SALIR:
+				cierraJuego();
 			default:
 				Log.d("tictacdrodie", "Respuesta por defecto");
 				Toast.makeText(this, "Respuesta por defecto", Toast.LENGTH_SHORT).show();

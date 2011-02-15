@@ -23,6 +23,8 @@ import com.sloy.tictacdroide.components.SoundManager;
 import com.sloy.tictacdroide.components.ThemeManager;
 import com.sloy.tictacdroide.components.Utils;
 import com.sloy.tictacdroide.constants.ThemeID;
+import com.sloy.tictacdroide.constants.Codes.Requests;
+import com.sloy.tictacdroide.constants.Codes.Results;
 
 public class MenuDosJugadores extends Activity {
 	
@@ -158,9 +160,13 @@ public class MenuDosJugadores extends Activity {
     @Override
 	protected void onActivityResult(int requestCode, int resultCode,
             Intent data) {
-           if (resultCode == 321 && requestCode == 123) {
-               setResult(321);
+           if (resultCode == Results.SALIR && requestCode == Requests.PARTIDA) {
+               setResult(Results.SALIR);
+               finish();
             }
+           else if(requestCode == Requests.PARTIDA && resultCode == Results.MENU_PRINCIPAL){
+        	   finish();
+           }
     }
     
     @Override

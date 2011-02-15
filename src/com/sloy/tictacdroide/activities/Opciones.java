@@ -21,6 +21,7 @@ import com.sloy.tictacdroide.components.ThemeManager;
 import com.sloy.tictacdroide.components.TwitterLoginPreference;
 import com.sloy.tictacdroide.components.Utils;
 import com.sloy.tictacdroide.constants.ThemeID;
+import com.sloy.tictacdroide.constants.Codes.Results;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -28,9 +29,6 @@ import twitter4j.TwitterException;
 import java.util.List;
 
 public class Opciones extends PreferenceActivity implements OnPreferenceChangeListener{
-
-	public static final int REQUEST_CODE = 666;
-	public static final int RESULT_CODE_THEME_CHANGED = 555;
 	
 	private  ApplicationController app;
 	private TwitterLoginPreference twLogin;
@@ -125,7 +123,7 @@ public class Opciones extends PreferenceActivity implements OnPreferenceChangeLi
 			editor.putString("themePackageName", newValue.toString());
 			editor.commit();
 			ThemeManager.setTheme(getApplicationContext());
-			setResult(RESULT_CODE_THEME_CHANGED);
+			setResult(Results.THEME_CHANGED);
 			return false;
 			}
 		return false;

@@ -24,6 +24,8 @@ import com.sloy.tictacdroide.components.SoundManager;
 import com.sloy.tictacdroide.components.ThemeManager;
 import com.sloy.tictacdroide.components.Utils;
 import com.sloy.tictacdroide.constants.ThemeID;
+import com.sloy.tictacdroide.constants.Codes.Requests;
+import com.sloy.tictacdroide.constants.Codes.Results;
 
 public class MenuUnJugador extends Activity {
 	
@@ -153,16 +155,19 @@ public class MenuUnJugador extends Activity {
     	intent.putExtra("dificultad", new int[]{0,dif});
     	intent.putExtra("humano", new boolean[]{true,false});
     	intent.putExtra("turnoInicial", turno);
-    	startActivityForResult(intent, 123);
+    	startActivityForResult(intent, Requests.PARTIDA);
     }
     
     @Override
 	protected void onActivityResult(int requestCode, int resultCode,
             Intent data) {
-           if (resultCode == 321 && requestCode == 123) {
-               setResult(321);
+           if (resultCode == Results.SALIR && requestCode == Requests.PARTIDA) {
+               setResult(Results.SALIR);
                finish();
             }
+           else if(requestCode == Requests.PARTIDA && resultCode == Results.MENU_PRINCIPAL){
+        	   finish();
+           }
     }
     
     @Override

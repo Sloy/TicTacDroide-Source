@@ -23,6 +23,8 @@ import com.sloy.tictacdroide.components.SoundManager;
 import com.sloy.tictacdroide.components.ThemeManager;
 import com.sloy.tictacdroide.components.Utils;
 import com.sloy.tictacdroide.constants.ThemeID;
+import com.sloy.tictacdroide.constants.Codes.Requests;
+import com.sloy.tictacdroide.constants.Codes.Results;
 
 public class MenuPrincipal extends Activity {
 	
@@ -103,7 +105,7 @@ public class MenuPrincipal extends Activity {
 			@Override
 			public void onClick(View v) {
 				Utils.vibrar(getApplicationContext(), Utils.CORTO);
-				startActivityForResult(new Intent(getApplicationContext(), com.sloy.tictacdroide.activities.MenuUnJugador.class), 123);
+				startActivityForResult(new Intent(getApplicationContext(), com.sloy.tictacdroide.activities.MenuUnJugador.class), Requests.MENU_PARTIDA);
 				SoundManager.playSound(SoundManager.NAVEGAR);
 				
 			}
@@ -113,7 +115,7 @@ public class MenuPrincipal extends Activity {
 			@Override
 			public void onClick(View v) {
 				Utils.vibrar(getApplicationContext(), Utils.CORTO);
-				startActivityForResult(new Intent(getApplicationContext(),com.sloy.tictacdroide.activities.MenuDosJugadores.class), 123);
+				startActivityForResult(new Intent(getApplicationContext(),com.sloy.tictacdroide.activities.MenuDosJugadores.class), Requests.MENU_PARTIDA);
 				SoundManager.playSound(SoundManager.NAVEGAR);
 			}
 		});
@@ -123,7 +125,7 @@ public class MenuPrincipal extends Activity {
 			@Override
 			public void onClick(View v) {
 				Utils.vibrar(getApplicationContext(), Utils.CORTO);
-				startActivityForResult(new Intent(getApplicationContext(),com.sloy.tictacdroide.activities.Opciones.class), Opciones.REQUEST_CODE);
+				startActivityForResult(new Intent(getApplicationContext(),com.sloy.tictacdroide.activities.Opciones.class), Requests.OPCIONES);
 				SoundManager.playSound(SoundManager.NAVEGAR);
 			}
 		});
@@ -183,17 +185,17 @@ public class MenuPrincipal extends Activity {
     
     @Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    	// Finalizar
-           if (resultCode == 321 && requestCode == 123) {
-               finish();
-            }
-           // Ha cambiado el tema
-           if(requestCode==Opciones.REQUEST_CODE && resultCode==Opciones.RESULT_CODE_THEME_CHANGED){
-        	   Intent i = new Intent(getApplicationContext(),com.sloy.tictacdroide.activities.MenuPrincipal.class);
-        	   startActivity(i);
-        	   SoundManager.persistent = true;
-        	   this.finish();
-           }
+		// Finalizar
+       if (requestCode == Requests.MENU_PARTIDA &&  resultCode == Results.SALIR) {
+           finish();
+        }
+       // Ha cambiado el tema
+       if(requestCode==Requests.OPCIONES && resultCode==Results.THEME_CHANGED){
+    	   Intent i = new Intent(getApplicationContext(),com.sloy.tictacdroide.activities.MenuPrincipal.class);
+    	   startActivity(i);
+    	   SoundManager.persistent = true;
+    	   this.finish();
+       }
     }
     
     @Override

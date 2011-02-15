@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sloy.tictacdroide.R;
+import com.sloy.tictacdroide.constants.Codes.Results;
 
 
 public class FinalScreen extends Activity {
@@ -20,11 +21,6 @@ public class FinalScreen extends Activity {
 	public static final String PUNTUACION_1_INT = "punt1";
 	public static final String PUNTUACION_2_INT = "punt2";
 	public static final String DIFICULTAD_INT = "dif";
-	
-	public static final int REQUEST_CODE = 15;
-	public static final int RESULT_NUEVA = 16;
-	public static final int RESULT_VOLVER = 17;
-	public static final int RESULT_MENU= 18;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -112,17 +108,17 @@ public class FinalScreen extends Activity {
 	}
 	
 	private void nuevaPartida(){
-		setResult(RESULT_NUEVA);
+		setResult(Results.NUEVA_PARTIDA);
 		finish();
 	}
 	
 	private void volver(){
-		setResult(RESULT_VOLVER);
+		setResult(Results.MENU_PARTIDA);
 		finish();
 	}
 	
 	private void menu(){
-		setResult(RESULT_MENU);
+		setResult(Results.MENU_PRINCIPAL);
 		finish();
 	}
 
