@@ -26,7 +26,6 @@ import com.admob.android.ads.AdManager;
 import com.admob.android.ads.AdView;
 import com.openfeint.api.resource.Achievement;
 import com.sloy.tictacdroide.R;
-import com.sloy.tictacdroide.components.ApplicationController;
 import com.sloy.tictacdroide.components.SoundManager;
 import com.sloy.tictacdroide.components.StatisticsDBAdapter;
 import com.sloy.tictacdroide.components.ThemeManager;
@@ -40,8 +39,6 @@ import com.sloy.tictacdroide.openfeint.AchievementsID;
 import com.sloy.tictacdroide.openfeint.ScoreSubmit;
 import com.sloy.tresenraya.Jugador;
 import com.sloy.tresenraya.Partida;
-
-import twitter4j.Twitter;
 
 import java.util.Date;
 
@@ -72,11 +69,6 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 	 * Iconos de los jugadores
 	 */
 	private ImageView imgJugador1,imgJugador2;
-	
-	/**
-	 * Objeto AlertDialog  para mostrar información.
-	 */
-	 private AlertDialog alert;
 	 
 	 /**
 	  * Objeto Partida que maneja el juego.
@@ -507,31 +499,7 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 		
 		/* Guarda las estadísticas en la base de datos */
 		mDbHelper.createEntry(gana, diferencia,(int) new Date().getTime(), j1.getNombre(), j1.isHumano(), puntuacion1, j1.getBot().dificultad, j2.getNombre(), j2.isHumano(), puntuacion2, j2.getBot().dificultad);
-		
-		/* Twitea el resultado */
-		//TODO: ojo chaval
-		if(!j2.isHumano()){
-			String resVerbal="";
-			switch (gana) {
-				case -1:
-					resVerbal="empatado";
-					break;
-				case 0:
-					resVerbal="ganado";
-					break;
-				case 1:
-					resVerbal="perdido";
-					break;
-			}
-			String lvVerbal = getResources().getStringArray(R.array.dificultad)[dificultad[1]-1];
-			Twitter tw = ((ApplicationController)getApplication()).getTwitter();
-			String status = "[Prueba] He "+resVerbal+" a #TicTacDroide en nivel "+lvVerbal+" con una puntuación de "+puntuacion1;
-			if(status.length()<=140){
-			//	tw.updateStatus(status);
-			}else{
-				Log.e("tictacdroide", "Error: Demasiado largo, bro");
-			}
-		}
+
 		
 		//mDbHelper.checkAll();
 		new AchievementsChecker(getApplicationContext(), mDbHelper);
