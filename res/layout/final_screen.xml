@@ -17,7 +17,7 @@
 		    android:layout_height="fill_parent"
 		    android:layout_weight="1"
 		    android:gravity="center_vertical|center_horizontal"
-		    android:text="Sloy gana"
+		    android:text="ganador"
 		    android:textAppearance="@style/TextFinalScreen"
 		    android:singleLine="true"
 		    android:scrollHorizontally="true"
@@ -49,12 +49,14 @@
 			android:gravity="center"
 			>
 			<TextView
+				android:id="@+id/fs_puntuacion_1_title"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Tu puntuación"
 				android:textAppearance="@style/TextFinalScreen"
 				/>
 			<TextView
+				android:id="@+id/fs_puntuacion_1"
 				android:layout_width="wrap_content"
 				android:layout_height="fill_parent"
 				android:layout_weight="1"
@@ -74,12 +76,14 @@
 			android:gravity="center"
 			>
 			<TextView
+				android:id="@+id/fs_puntuacion_2_title"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Mejor"
 				android:textAppearance="@style/TextFinalScreen"
 				/>
 			<TextView
+				android:id="@+id/fs_puntuacion_2"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
@@ -106,6 +110,7 @@
 			android:layout_height="fill_parent"
 			>
 			<Button
+				android:id="@+id/fs_bt_nueva"
 				android:layout_width="fill_parent"
 				android:layout_height="fill_parent"
 				android:layout_weight="1"
@@ -118,12 +123,14 @@
 				android:layout_weight="3"
 				>
 				<Button
+					android:id="@+id/fs_bt_volver"
 					android:layout_width="fill_parent"
 					android:layout_height="fill_parent"
 					android:layout_weight="1"
 					android:text="Volver"
 					/>
 				<Button
+					android:id="@+id/fs_bt_menu"
 					android:layout_width="fill_parent"
 					android:layout_height="fill_parent"
 					android:layout_weight="1"

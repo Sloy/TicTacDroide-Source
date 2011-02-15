@@ -3,6 +3,7 @@ package com.sloy.tictacdroide.activities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.admob.android.ads.AdManager;
 import com.admob.android.ads.AdView;
@@ -540,32 +542,20 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 		
 		
 		Utils.vibrar(getApplicationContext(), Utils.LARGO);
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setCancelable(false)
-        .setTitle(R.string.alert_titulo)
-        .setIcon(drw)
-        .setPositiveButton(R.string.alert_nueva, new DialogInterface.OnClickListener() {
-            @Override
-			public void onClick(DialogInterface dialog, int id) {
-            	nuevaPartida();
-            	dialog.dismiss();
-            }
-        })
-        .setNegativeButton(R.string.alert_atras, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				cierraPartida();
-			}
-		});
-		if(!p.jugadores[1].isHumano()){
-			s+=String.format(getString(R.string.alert_score),puntuacion1);
-		}
-		builder.setMessage(s);
-        alert = builder.create();
+		
+		// Muestra la Final Screen
+		final Intent dialogLauncher = new Intent(getApplicationContext(), com.sloy.tictacdroide.activities.FinalScreen.class);
+		dialogLauncher.putExtra(FinalScreen.ESTADO_INT, gana);
+		dialogLauncher.putExtra(FinalScreen.JUGADOR_1_STR, j1.getNombre());
+		dialogLauncher.putExtra(FinalScreen.JUGADOR_2_STR, j2.getNombre());
+		dialogLauncher.putExtra(FinalScreen.PUNTUACION_1_INT, puntuacion1);
+		dialogLauncher.putExtra(FinalScreen.PUNTUACION_2_INT, puntuacion2);
+		dialogLauncher.putExtra(FinalScreen.DIFICULTAD_INT, j2.getBot().dificultad);
+		
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-            	alert.show();
+            	startActivityForResult(dialogLauncher, FinalScreen.REQUEST_CODE);
             }
         }, DELAY_PARTIDA); 
         
@@ -586,6 +576,29 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 		finish();
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode == FinalScreen.REQUEST_CODE){
+			// Comprueba la acción que desea hacer el usuario
+			switch (resultCode) {
+			case FinalScreen.RESULT_NUEVA:
+				nuevaPartida();
+				break;
+			case FinalScreen.RESULT_VOLVER:
+				finish();
+				break;
+			case FinalScreen.RESULT_MENU:
+				Toast.makeText(this, "Aún no disponible :(", Toast.LENGTH_SHORT).show();
+				break;
+			default:
+				Log.d("tictacdrodie", "Respuesta por defecto");
+				Toast.makeText(this, "Respuesta por defecto", Toast.LENGTH_SHORT).show();
+				nuevaPartida();
+				break;
+			}
+		}
+	}
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -598,6 +611,7 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 		return super.onKeyDown(keyCode, event);
 		
 	}
+	
 	
 	private String fromFuture(String s){
 		String nombre = s;
@@ -634,6 +648,7 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 		}
 		return nombre;
 	}
+	
 	@Override
 	protected void onStop() {
 		super.onStop();

@@ -145,13 +145,7 @@ public class MenuPrincipal extends Activity {
 			@Override
 			public void onClick(View v) {
 				Utils.vibrar(getApplicationContext(), Utils.CORTO);
-//				alert.show();
-				Intent dialogLauncher = new Intent(getApplicationContext(), com.sloy.tictacdroide.activities.FinalScreen.class);
-				dialogLauncher.putExtra(FinalScreen.ESTADO_INT, 0);
-				dialogLauncher.putExtra(FinalScreen.GANADOR_STR, "Sloy");
-				dialogLauncher.putExtra(FinalScreen.PUNTUACION_1_INT, 666);
-				dialogLauncher.putExtra(FinalScreen.DIFICULTAD_INT, 5);
-				startActivityForResult(dialogLauncher, FinalScreen.REQUEST_CODE);
+				alert.show();
 				SoundManager.playSound(SoundManager.NAVEGAR);
 			}
 		});
