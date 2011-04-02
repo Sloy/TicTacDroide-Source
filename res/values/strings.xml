@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">TicTacDroide</string>
-	<string name="app_version">2.2</string>
-	<string name="fecha_actualizacion">6/12/10</string>
-    <string name="acercaDialog_text" formatted="false">%s version at %s\n\nThe application is under constant development and updates will be issued with new features as time permits the developer to do this \n\nTicTacDroide version 1.1 was in third place in the Scenery Beta 2010.\n\nServe this humble space to thank everyone who helped me with ideas or contributions. To all of you, THANK YOU.</string>
+	<string name="app_version">2.3</string>
+	<string name="fecha_actualizacion">17/03/11</string>
+    <string name="acercaDialog_text">%1$s version at %2$s\n\nThe application is under constant development and updates will be issued with new features as time permits the developer to do this \n\nTicTacDroide version 1.1 was in third place in the Scenery Beta 2010.\n\nServe this humble space to thank everyone who helped me with ideas or contributions. To all of you, THANK YOU.</string>
     <string name="TAG">TicTacDroide</string>
     <string name="botonUnJugador">One Player</string>
     <string name="botonDosJugadores">Two Players</string>
@@ -91,7 +91,30 @@
 			<string name="lsThemesSummary">Change the custom theme of the game</string>
 			<string name="dlThemesAbout">About the theme</string>
    			<string name="dlThemesAboutSummary">Show information about the theme selected</string>
+			
+			<!-- Más temas -->
+   			<string name="catMoreThemes">More theems</string>
+   			<string name="btnRepoTitle">Theme repository</string>
+   			<string name="btnRepoSummary">Download new themes for the game!</string>
    			
+		<!-- Donación -->
+   		<string name="btnDonateTitle">Donate</string>
+		<string name="btnDonateSummary">Make a donation with PayPal</string>
+		
+	<!-- *** Final Screen *** -->
+	<string name="fsTitle">End of game</string>
+    <string name="fsWinner">%s wins!</string>
+    <string name="fsTie">Tie!</string>
+    <string name="fsYourScore">Your score:</string>
+    <string name="fsBest">Best:</string>
+    <string name="fsShare">Share:</string>
+    <string name="fsNewGame">New game</string>
+    <string name="fsBack">Back</string>
+    <string name="fsMenu">Menu</string>
+    <string name="fsTweetAlready">You have already sent it</string>
+    <string name="fsTweetNotConnected">Connect to Twitter first</string>
+    <string name="fsTweetSent">Tweet sent</string>
+    <string name="fsTweetTemplate">He %1$s a #TicTacDroide en nivel %2$s con una puntuación de %3$s - For #android in http://kcy.me/1zck</string>
 
     <string name="email_address">rafa.vazsan@gmail.com</string>
     <string name="email_subject">Suggestions for TicTacDroide</string>
@@ -105,6 +128,21 @@
     
     <string name="internet_required">Internet conexion is required in order to use this function</string>
     
-    
+    <string name="repo_action_apply">Aplicar</string>
+    <string name="repo_action_uninstall">Desinstalar</string>
+    <string name="repo_action_seeMarket">Ver en el Market</string>
+    <string name="repo_action_download_market">Descarga del Market</string>
+    <string name="repo_action_download_direct">Descarga directa</string>
+    <string name="repo_error_origins_title">Advertencia</string>
+    <string name="repo_error_origins_message">Por razones de seguridad, tienes desactivada la opción de instalar aplicaciones externas al Market. Para algunos de los temas del repositorio es necesaria activar esta opción. ¿Quieres activarla ahora?</string>
+    <string name="repo_error_origins_button_yes">Sí, ir ahora</string>
+    <string name="repo_error_origins_button_no">Otra vez será</string>
+    <string name="repo_error_notify_title">Ouch!</string>
+    <string name="repo_error_notify_button">Aceptar</string>
+    <string name="repo_error_notify_launchingMarket">No se pudo lanzar el Market</string>
+    <string name="repo_error_notify_loadingUI">No se pudo cargar los temas. Inténtalo de nuevo más tarde y si el problema persiste por favor notifica al desarrollador</string>
+    <string name="repo_error_notify_unknown">Error desconocido</string>
+    <string name="repo_applying">Aplicando...</string>
+    <string name="repo_author_prefix">por</string>
     
 </resources>

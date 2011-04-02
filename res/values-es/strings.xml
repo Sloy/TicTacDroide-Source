@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TicTacDroide</string>
-    <string name="acercaDialog_text" formatted="false">Versión %s a %s\n\nLa aplicación sigue en constante desarrollo y se publicarán actualizaciones con nuevas funcionalidades según el tiempo disponible por el desarrollador para tal.\n\nTicTacDroide versión 1.1 quedó en tercer puesto en el Scenery Beta 2010.\n\nSirva este humilde espacio para agradecer a todos los que me han ayudado con sus ideas o aportaciones. A todos vosotros, GRACIAS.</string>
+    <string name="acercaDialog_text">Versión %1$s a %2$s\n\nLa aplicación sigue en constante desarrollo y se publicarán actualizaciones con nuevas funcionalidades según el tiempo disponible por el desarrollador para tal.\n\nTicTacDroide versión 1.1 quedó en tercer puesto en el Scenery Beta 2010.\n\nSirva este humilde espacio para agradecer a todos los que me han ayudado con sus ideas o aportaciones. A todos vosotros, GRACIAS.</string>
     <string name="TAG">TicTacDroide</string>
     <string name="botonUnJugador">Un Jugador</string>
     <string name="botonDosJugadores">Dos Jugadores</string>
@@ -85,9 +85,32 @@
 			<string name="lsThemesSummary">Cambia el tema personalizado del juego</string>
 			<string name="dlThemesAbout">Acerca del tema</string>
    			<string name="dlThemesAboutSummary">Muestra informción acerca del tema seleccionado</string>
+   			
+   			<!-- Más temas -->
+   			<string name="catMoreThemes">Más temas</string>
+   			<string name="btnRepoTitle">Repositorio de temas</string>
+   			<string name="btnRepoSummary">¡Descarga nuevos temas para el juego!</string>
+   			
+		
+		<!-- Donación -->
+   		<string name="btnDonateTitle">Donar</string>
+    <string name="btnDonateSummary">Si te ha gustado TicTacDroide, por favor cosidera hacer una donación</string>
+		
+	<!-- *** Final Screen *** -->
+	<string name="fsTitle">Fin de partida</string>
+    <string name="fsWinner">¡%s gana!</string>
+    <string name="fsTie">¡Empate!</string>
+    <string name="fsYourScore">Tu puntuación:</string>
+    <string name="fsBest">Mejor:</string>
+    <string name="fsShare">Compartir:</string>
+    <string name="fsNewGame">Nueva partida</string>
+    <string name="fsBack">Volver</string>
+    <string name="fsMenu">Menú</string>
+    <string name="fsTweetAlready">Ya lo has enviado</string>
+    <string name="fsTweetNotConnected">Debes conectarte antes a Twitter</string>
+    <string name="fsTweetSent">Tweet enviado</string>
+    <string name="fsTweetTemplate">He %1$s a #TicTacDroide en nivel %2$s con una puntuación de %3$s - Para #android en http://kcy.me/1zck</string>
     
-    
-    <string name="email_address">rafa.vazsan@gmail.com</string>
     <string name="email_subject">Sugerencias para TicTacDroide</string>
     <string name="email_text">Escribe a continuación tu comentario o sugerencia lo más detallado posible.\n------\n</string>
     <string name="email_intent">Enviar email...</string>
@@ -99,4 +122,21 @@
     
     <string name="internet_required">Se requiere conexión a Internet para usar esta función</string>
     
+	<!-- Repositorio -->
+	<string name="repo_action_apply">Aplicar</string>
+    <string name="repo_action_uninstall">Desinstalar</string>
+    <string name="repo_action_seeMarket">Ver en el Market</string>
+    <string name="repo_action_download_market">Descarga del Market</string>
+    <string name="repo_action_download_direct">Descarga directa</string>
+    <string name="repo_error_origins_title">Advertencia</string>
+    <string name="repo_error_origins_message">Por razones de seguridad, tienes desactivada la opción de instalar aplicaciones externas al Market. Para algunos de los temas del repositorio es necesaria activar esta opción. ¿Quieres activarla ahora?</string>
+    <string name="repo_error_origins_button_yes">Sí, ir ahora</string>
+    <string name="repo_error_origins_button_no">Otra vez será</string>
+    <string name="repo_error_notify_title">Ouch!</string>
+    <string name="repo_error_notify_button">Aceptar</string>
+    <string name="repo_error_notify_launchingMarket">No se pudo lanzar el Market</string>
+    <string name="repo_error_notify_loadingUI">No se pudo cargar los temas. Inténtalo de nuevo más tarde y si el problema persiste por favor notifica al desarrollador</string>
+    <string name="repo_error_notify_unknown">Error desconocido</string>
+    <string name="repo_applying">Aplicando...</string>
+    <string name="repo_author_prefix">por</string>
 </resources>

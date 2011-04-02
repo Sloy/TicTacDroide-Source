@@ -76,17 +76,30 @@
   		android:summary="@string/scPersonalizacionSummary"
   		>
   		<PreferenceCategory
-  		android:title="@string/catYourThemes">
-  		<ListPreference
-  			android:key="themePackageName"
-  			android:title="@string/lsThemes"
-  			android:summary="@string/lsThemesSummary"	
-  			/>
-  		<Preference
-  			android:key="dlThemesAbout"
-  			android:title="@string/dlThemesAbout"
-  			android:summary="@string/dlThemesAboutSummary"
-  			/>
-  	</PreferenceCategory>
+	  		android:title="@string/catYourThemes">
+	  		<ListPreference
+	  			android:key="themePackageName"
+	  			android:title="@string/lsThemes"
+	  			android:summary="@string/lsThemesSummary"	
+	  			/>
+	  		<Preference
+	  			android:key="dlThemesAbout"
+	  			android:title="@string/dlThemesAbout"
+	  			android:summary="@string/dlThemesAboutSummary"
+	  			/>
+	  	</PreferenceCategory>
+  		<PreferenceCategory
+	  		android:title="@string/catMoreThemes">
+	  		<Preference 
+	  			android:title="@string/btnRepoTitle" 
+	  			android:key="btThemeRepo" 
+	  			android:summary="@string/btnRepoSummary" />
+	  	</PreferenceCategory>
   	</PreferenceScreen>
+  	
+  	<Preference 
+  		android:title="@string/btnDonateTitle" 
+  		android:key="btnDonate" 
+  		android:summary="@string/btnDonateSummary" 
+  		android:widgetLayout="@layout/paypal_donate_pref" />
 </PreferenceScreen>

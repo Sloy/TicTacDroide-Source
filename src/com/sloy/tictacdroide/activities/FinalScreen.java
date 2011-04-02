@@ -2,8 +2,8 @@ package com.sloy.tictacdroide.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
@@ -15,8 +15,11 @@ import android.widget.Toast;
 
 import com.sloy.tictacdroide.R;
 import com.sloy.tictacdroide.components.ApplicationController;
+import com.sloy.tictacdroide.components.MyLog;
 import com.sloy.tictacdroide.components.StatisticsDBAdapter;
+import com.sloy.tictacdroide.components.ThemeManager;
 import com.sloy.tictacdroide.components.Utils;
+import com.sloy.tictacdroide.constants.ThemeID;
 import com.sloy.tictacdroide.constants.Codes.Results;
 
 import twitter4j.Twitter;
@@ -42,12 +45,38 @@ public class FinalScreen extends Activity {
 	
 	private boolean tweeted = false;
 	
+	private Drawable fichaEndX=null,fichaEndO=null,fichaEndTie=null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.final_screen);
-        setTitle("Fin de partida");
+        setTitle(R.string.fsTitle);
         getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+        
+        /* Theme stuff */
+        Drawable auxDrw = null;
+        // Ficha X Small
+    	auxDrw = ThemeManager.getDrawable(ThemeID.FICHA_END_X);
+    	if(auxDrw!=null){
+    		fichaEndX =  auxDrw;
+    	}else{
+    		fichaEndX = getResources().getDrawable(R.drawable.end_x);
+    	}
+    	// Ficha O Small
+    	auxDrw = ThemeManager.getDrawable(ThemeID.FICHA_END_O);
+    	if(auxDrw!=null){
+    		fichaEndO =  auxDrw;
+    	}else{
+    		fichaEndO = getResources().getDrawable(R.drawable.end_o);
+    	}
+    	// Ficha Gray Small
+    	auxDrw = ThemeManager.getDrawable(ThemeID.FICHA_END_TIE);
+    	if(auxDrw!=null){
+    		fichaEndTie =  auxDrw;
+    	}else{
+    		fichaEndTie = getResources().getDrawable(R.drawable.end_tie);
+    	}
         
         TextView tvGanador = (TextView)findViewById(R.id.fs_gana_text);
         ImageView ivGanador = (ImageView)findViewById(R.id.fs_gana_img);
@@ -79,7 +108,7 @@ public class FinalScreen extends Activity {
         // Recoge la información recibida del Intent
         Bundle bundle = getIntent().getExtras();
         if(bundle==null){
-        	Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
+        	MyLog.d("No se recibió datos");
         	finish(); //Si no recibe nada cierra la Activity
         	return;
         }
@@ -95,13 +124,13 @@ public class FinalScreen extends Activity {
         	((TextView)findViewById(R.id.fs_puntuacion_1_title)).setText(jugador1+":");
         	((TextView)findViewById(R.id.fs_puntuacion_2_title)).setText(jugador2+":");
         	// Pone la puntuación 2 del jugador 2
-        	((TextView)findViewById(R.id.fs_puntuacion_2)).setText(punuacion2);
+        	((TextView)findViewById(R.id.fs_puntuacion_2)).setText(punuacion2.toString());
         	// Quita el menú para compartir
         	((LinearLayout)findViewById(R.id.fs_share_menu)).setVisibility(View.GONE);
         }else{ //CPU
         	// Pone los títulos de las puntuaciones
-        	((TextView)findViewById(R.id.fs_puntuacion_1_title)).setText("Tu puntuación:");
-        	((TextView)findViewById(R.id.fs_puntuacion_2_title)).setText("Mejor:");
+        	((TextView)findViewById(R.id.fs_puntuacion_1_title)).setText(R.string.fsYourScore);
+        	((TextView)findViewById(R.id.fs_puntuacion_2_title)).setText(R.string.fsBest);
         	StatisticsDBAdapter mDbHelper = new StatisticsDBAdapter(this);
             mDbHelper.open();
             Integer best = mDbHelper.getBestScore(dificultad);
@@ -112,27 +141,22 @@ public class FinalScreen extends Activity {
         ((TextView)findViewById(R.id.fs_puntuacion_1)).setText(puntuacion1.toString());
         
         // Según cómo acabe la partida...
-      //  Drawable drw = null;
-        int resID = 0;
+        Drawable drw = null;
         switch (estado) {
 		case -1:
-			//drw = ThemeManager.getDrawable(ThemeID.FICHA_END_TIE);
-			resID = R.drawable.end_tie;
-			tvGanador.setText("Empate!");
+			drw = fichaEndTie;
+			tvGanador.setText(R.string.fsTie);
 			break;
 		case 0:
-			//drw = ThemeManager.getDrawable(ThemeID.FICHA_END_X);
-			resID = R.drawable.end_x;
-			tvGanador.setText(jugador1+" gana!");
+			drw = fichaEndX;
+			tvGanador.setText(String.format(getString(R.string.fsWinner), jugador1));
 			break;
 		case 1:
-			//drw = ThemeManager.getDrawable(ThemeID.FICHA_END_O); 
-			resID = R.drawable.end_o;
-			tvGanador.setText(jugador2+" gana!");
+			drw = fichaEndO;
+			tvGanador.setText(String.format(getString(R.string.fsWinner), jugador2));
 			break;
 		}
-        //ivGanador.setImageDrawable(drw);
-        ivGanador.setImageResource(resID);              
+        ivGanador.setImageDrawable(drw);
 	}
 	
 	@Override
@@ -163,15 +187,19 @@ public class FinalScreen extends Activity {
 	
 	private void compartir(){
 		if(tweeted){
-			Toast.makeText(this, "Ya lo has mandado, macho", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.fsTweetAlready, Toast.LENGTH_SHORT).show();
 			return;
 		}
 		/* Twitea el resultado */
+		if(!Utils.isNetworkAvailable(getApplicationContext())){
+			Toast.makeText(this, R.string.internet_required, Toast.LENGTH_SHORT).show();
+			return;
+		}
 		if(dificultad!=0){
 			ApplicationController app = (ApplicationController) getApplication();
 			if(!app.isAuthorized()){
 				startActivity(new Intent(getApplicationContext(), com.sloy.tictacdroide.activities.TwitterAuthorizationActivity.class));
-				Toast.makeText(this, "Debes conectarte antes a Twitter", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, R.string.fsTweetNotConnected, Toast.LENGTH_SHORT).show();
 				return;
 			}
 			Twitter tw = app.getTwitter();
@@ -193,7 +221,7 @@ public class FinalScreen extends Activity {
 			if(status.length()<=140){
 				try {
 					tw.updateStatus(status);
-					Toast.makeText(this, "Tweet sent", Toast.LENGTH_SHORT).show();
+					Toast.makeText(this, R.string.fsTweetSent, Toast.LENGTH_SHORT).show();
 					Utils.vibrar(this, Utils.CORTO);
 					tweeted=true;
 				} catch (TwitterException e) {
@@ -201,7 +229,7 @@ public class FinalScreen extends Activity {
 				}
 				
 			}else{
-				Log.e("tictacdroide", "Error: Demasiado largo, bro");
+				MyLog.e("Tweet Demasiado largo, bro");
 			}
 		}
 	}

@@ -520,7 +520,7 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 		dialogLauncher.putExtra(FinalScreen.JUGADOR_2_STR, j2.getNombre());
 		dialogLauncher.putExtra(FinalScreen.PUNTUACION_1_INT, puntuacion1);
 		dialogLauncher.putExtra(FinalScreen.PUNTUACION_2_INT, puntuacion2);
-		dialogLauncher.putExtra(FinalScreen.DIFICULTAD_INT, j2.getBot().dificultad);
+		dialogLauncher.putExtra(FinalScreen.DIFICULTAD_INT, j2.isHumano()?0:j2.getBot().dificultad);
 		
         new Handler().postDelayed(new Runnable(){
             @Override

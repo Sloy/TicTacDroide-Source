@@ -10,6 +10,7 @@ public class Codes {
 		public static final int OPENFEINT = 6;
 		public static final int PARTIDA = 7;
 		public static final int FINAL_SCREEN = 8;
+		public static final int THEME_REPO = 9;
 	}
 
 	public class Results{

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -21,6 +22,7 @@ import com.sloy.tictacdroide.components.ThemeManager;
 import com.sloy.tictacdroide.components.TwitterLoginPreference;
 import com.sloy.tictacdroide.components.Utils;
 import com.sloy.tictacdroide.constants.ThemeID;
+import com.sloy.tictacdroide.constants.Codes.Requests;
 import com.sloy.tictacdroide.constants.Codes.Results;
 
 import twitter4j.Twitter;
@@ -32,6 +34,8 @@ public class Opciones extends PreferenceActivity implements OnPreferenceChangeLi
 	
 	private  ApplicationController app;
 	private TwitterLoginPreference twLogin;
+	
+	private final String PAYPAL_URL =  "https://www.paypal.com/es/cgi-bin/webscr?cmd=_flow&SESSION=Ouoz6CBLpKl9cBhwlympwIjFRZWWIYht7tHVEaDS_KDI0kkUGrNws8pQeke&dispatch=5885d80a13c0db1f8e263663d3faee8d5fa8ff279e37c3d9d4e38bdbee0ede69";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +63,25 @@ public class Opciones extends PreferenceActivity implements OnPreferenceChangeLi
 				.create().show();
 				return true;
 			}
-		});      
+		});
+		
+		((Preference)findPreference("btThemeRepo")).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				startActivityForResult(new Intent(getApplicationContext(), com.sloy.tictacdroide.activities.ThemeRepo.class), Requests.THEME_REPO);
+				return true;
+			}
+		});
+		
+		((Preference)findPreference("btnDonate")).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				startActivity(new Intent(Intent.ACTION_VIEW,
+    					Uri.parse(PAYPAL_URL)));
+				return true;
+			}
+		});
+		
 		app = (ApplicationController) getApplication();
 		twLogin = (TwitterLoginPreference)findPreference("twLogin");
 		twLogin.setWidgetLayoutResource(R.layout.twitter_login_pref);
@@ -79,7 +101,9 @@ public class Opciones extends PreferenceActivity implements OnPreferenceChangeLi
         
 	}
 	
-	  @Override
+
+
+	@Override
 	protected void onResume() {
 		super.onResume();
 		/* Twitter check */
@@ -106,6 +130,15 @@ public class Opciones extends PreferenceActivity implements OnPreferenceChangeLi
 	        lp.setEntries(entries);
 	        lp.setEntryValues(values);
 	}
+	
+    @Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+       // Ha cambiado el tema
+       if(requestCode==Requests.THEME_REPO && resultCode==Results.THEME_CHANGED){
+    	   setResult(Results.THEME_CHANGED);
+    	   finish();
+       }
+    }
 
 	@Override
 		public boolean onKeyDown(int keyCode, KeyEvent event) {

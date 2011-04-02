@@ -10,6 +10,12 @@ import android.view.animation.AnimationUtils;
 
 import com.sloy.tictacdroide.R;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class Utils {
 
 	public static boolean showAds = false;
@@ -57,6 +63,23 @@ public class Utils {
 			}
 		}
 		return false;
+	}
+
+	public static String suputamadre(URL url) throws IOException{
+		HttpURLConnection c = (HttpURLConnection) url.openConnection();
+		c.setRequestMethod("GET");
+		c.setReadTimeout(15 * 1000);
+		c.setUseCaches(false);
+		c.connect();
+		// read the output from the server
+		BufferedReader reader = new BufferedReader(new InputStreamReader(c.getInputStream()));
+		StringBuilder stringBuilder = new StringBuilder();
+		String line = null;
+		while ((line = reader.readLine()) != null) {
+			stringBuilder.append(line + "\n");
+		}
+		String fuck =  stringBuilder.toString();	
+		return fuck;
 	}
 	
 	/* Drawable from URL */

@@ -154,7 +154,7 @@ public class MenuDosJugadores extends Activity {
     	intent.putExtra("dificultad", new int[]{0,0});
     	intent.putExtra("humano", new boolean[]{true,true});
     	intent.putExtra("turnoInicial", turno);
-    	startActivityForResult(intent, 123);
+    	startActivityForResult(intent, Requests.PARTIDA);
     }
     
     @Override
