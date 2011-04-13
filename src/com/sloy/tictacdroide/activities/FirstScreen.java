@@ -30,7 +30,9 @@ public class FirstScreen extends Activity {
 	
     	// Fondo
         Drawable auxDrw = ThemeManager.getDrawable(ThemeID.FONDO);
-    	if(auxDrw!=null)((LinearLayout)findViewById(R.id.linLay_FS)).setBackgroundDrawable(auxDrw);
+    	if(auxDrw!=null){
+			((LinearLayout)findViewById(R.id.linLay_FS)).setBackgroundDrawable(auxDrw);
+		}
     	
         // Control de audio multimedia
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
