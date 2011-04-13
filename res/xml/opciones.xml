@@ -64,8 +64,10 @@
   			android:title="@string/catFacebook"
   			>
   			<Preference
-  				android:title="@string/fbCominSoon"
-  				/>
+  				android:key="fbLogin"
+  				android:title="@string/fb_login_title"
+  				android:summary="@string/tw_login_summary"
+  				android:widgetLayout="@layout/facebook_login_pref" />
   			</PreferenceCategory>
   		</PreferenceScreen>
   
@@ -97,9 +99,9 @@
 	  	</PreferenceCategory>
   	</PreferenceScreen>
   	
-  	<Preference 
+  	<!--<Preference 
   		android:title="@string/btnDonateTitle" 
   		android:key="btnDonate" 
   		android:summary="@string/btnDonateSummary" 
   		android:widgetLayout="@layout/paypal_donate_pref" />
-</PreferenceScreen>
+--></PreferenceScreen>

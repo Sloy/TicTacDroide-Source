@@ -28,7 +28,7 @@ public class TwitterAuthorizationActivity extends Activity {
 	        String token = uri.getQueryParameter("oauth_token");
 	        if (null != token) {
 	          webView.setVisibility(View.INVISIBLE);
-	          app.authorized();
+	          app.authorizedTwitter();
 	          finish();
 	        } else {
 	          Toast.makeText(getApplicationContext(), "Error, try again...", Toast.LENGTH_SHORT).show();
@@ -50,7 +50,7 @@ public class TwitterAuthorizationActivity extends Activity {
 	  @Override
 	  protected void onResume() {
 	    super.onResume();
-	    String authURL = app.beginAuthorization();
+	    String authURL = app.beginTwitterAuthorization();
 	    webView.loadUrl(authURL);
 	  }
 

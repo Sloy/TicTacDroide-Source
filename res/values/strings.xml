@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">TicTacDroide</string>
-	<string name="app_version">2.3</string>
-	<string name="fecha_actualizacion">17/03/11</string>
+	<string name="app_version">2.4</string>
+	<string name="fecha_actualizacion">13/04/11</string>
     <string name="acercaDialog_text">%1$s version at %2$s\n\nThe application is under constant development and updates will be issued with new features as time permits the developer to do this \n\nTicTacDroide version 1.1 was in third place in the Scenery Beta 2010.\n\nServe this humble space to thank everyone who helped me with ideas or contributions. To all of you, THANK YOU.</string>
     <string name="TAG">TicTacDroide</string>
     <string name="botonUnJugador">One Player</string>
@@ -79,7 +79,10 @@
 		    
 		    <!-- Facebook -->
 		    <string name="catFacebook">Facebook</string>
-		    <string name="fbCominSoon">Coming soon...</string>
+		    <string name="fb_login_title">Log in</string>
+		    <string name="fb_login_summary">Conect to your Facebook account</string>
+		    <string name="fb_logout_title">Log out</string>
+		    <string name="fb_logout_summary">You are logged in :)</string>
 		    
     	<!-- Personalización -->
     	<string name="scPersonalizacion">Customization</string>
@@ -114,7 +117,13 @@
     <string name="fsTweetAlready">You have already sent it</string>
     <string name="fsTweetNotConnected">Connect to Twitter first</string>
     <string name="fsTweetSent">Tweet sent</string>
-    <string name="fsTweetTemplate">He %1$s a #TicTacDroide en nivel %2$s con una puntuación de %3$s - For #android in http://kcy.me/1zck</string>
+    <string name="fsTweetTemplate">I\'ve %1$s in #TicTacDroide at level %2$s with a score of %3$s - For Android in http://kcy.me/1zck</string>
+    <string name="fsFacebookAlready">You have already sent it</string>
+    <string name="fsFacebookNotConnected">Connect to Facebook first</string>
+    <string name="fsFacebookSent">Posted in your wall</string>
+    <string name="fsTweetResultWon">Won</string>
+    <string name="fsTweetResultLosed">Losed</string>
+    <string name="fsTweetResultTied">Tied</string>
 
     <string name="email_address">rafa.vazsan@gmail.com</string>
     <string name="email_subject">Suggestions for TicTacDroide</string>

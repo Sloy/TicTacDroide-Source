@@ -73,7 +73,10 @@
 		    
 		    <!-- Facebook -->
 		    <string name="catFacebook">Facebook</string>
-		    <string name="fbCominSoon">Próximamente...</string>
+		    <string name="fb_login_title">Conectar</string>
+		    <string name="fb_login_summary">Conéctate con tu cuenta de Facebook</string>
+		    <string name="fb_logout_title">Desconectar</string>
+		    <string name="fb_logout_summary">Estás conectado :)</string>
 		    
     	<!-- Personalización -->
     	<string name="scPersonalizacion">Personalización</string>
@@ -109,7 +112,13 @@
     <string name="fsTweetAlready">Ya lo has enviado</string>
     <string name="fsTweetNotConnected">Debes conectarte antes a Twitter</string>
     <string name="fsTweetSent">Tweet enviado</string>
-    <string name="fsTweetTemplate">He %1$s a #TicTacDroide en nivel %2$s con una puntuación de %3$s - Para #android en http://kcy.me/1zck</string>
+    <string name="fsTweetTemplate">He %1$s a #TicTacDroide en nivel %2$s con una puntuación de %3$s - Para Android en http://kcy.me/1zck</string>
+    <string name="fsFacebookAlready">Ya lo has enviado</string>
+    <string name="fsFacebookNotConnected">Debes conectarte antes a Facebook</string>
+    <string name="fsFacebookSent">Publicado en tu muro</string>
+    <string name="fsTweetResultWon">ganado</string>
+    <string name="fsTweetResultLosed">perdido</string>
+    <string name="fsTweetResultTied">empatado</string>
     
     <string name="email_subject">Sugerencias para TicTacDroide</string>
     <string name="email_text">Escribe a continuación tu comentario o sugerencia lo más detallado posible.\n------\n</string>

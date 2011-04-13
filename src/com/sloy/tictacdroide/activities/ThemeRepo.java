@@ -148,8 +148,6 @@ public class ThemeRepo extends Activity {
 		marketEnabled = canUseMarket();
 
 		mListView = (ListView)findViewById(android.R.id.list);
-//		registerForContextMenu(mListView);
-//		lv.setAdapter(new SimpleAdapter(this, fillMap, R.layout.item_theme, from, to));
 		mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int pos,
@@ -160,10 +158,14 @@ public class ThemeRepo extends Activity {
 					// ya lo tiene instalado
 					qa.addActionItem(aiApply);
 					qa.addActionItem(aiUninstall);
-					if(DownloadLink.isMarketCapable(t)) qa.addActionItem(aiMarketView);
+					if(DownloadLink.isMarketCapable(t)){
+						qa.addActionItem(aiMarketView);
+					}
 				}else{
 					// no está instalado
-					if(DownloadLink.isMarketCapable(t)) qa.addActionItem(aiDownloadMarket);
+					if(DownloadLink.isMarketCapable(t)){
+						qa.addActionItem(aiDownloadMarket);
+					}
 					qa.addActionItem(aiDownloadDirect);
 				}
 				qa.show();
@@ -212,8 +214,9 @@ public class ThemeRepo extends Activity {
 
 			for (int i = 0; true; i++) {
 				String aux = jsonMain.optString("theme_" + i);
-				if (aux == "")
+				if (aux == ""){
 					break;
+				}
 				list.add(new Theme(new JSONObject(aux)));
 			}
 		} catch (MalformedURLException e) {
