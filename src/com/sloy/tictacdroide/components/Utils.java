@@ -18,7 +18,7 @@ import java.net.URL;
 
 public class Utils {
 
-	public static boolean showAds = false;
+	public static boolean showAds = true;
 	public static SharedPreferences preferencias;
 	public static Vibrator v = null;
 	public static final int CORTO = 50;
@@ -27,7 +27,9 @@ public class Utils {
 	
 	static public void vibrar(Context ctx, int t){
 		//boolean activo = Utils.p.getBoolean("cbVibrar", true);
-		if(!preferencias.getBoolean("cbVibrar", true)) return;
+		if(!preferencias.getBoolean("cbVibrar", true)){
+			return;
+		}
 		if(v==null){
 			v = (Vibrator) ctx.getSystemService(Context.VIBRATOR_SERVICE);
 		}

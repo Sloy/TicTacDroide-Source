@@ -22,8 +22,8 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.admob.android.ads.AdManager;
-import com.admob.android.ads.AdView;
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 import com.openfeint.api.resource.Achievement;
 import com.sloy.tictacdroide.R;
 import com.sloy.tictacdroide.components.SoundManager;
@@ -116,15 +116,11 @@ public class PartidaTicTac extends Activity implements OnClickListener {
         //
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         
-        /* Anuncios */
-		AdManager.setTestDevices( new String[] {
-        		AdManager.TEST_EMULATOR, // Android emulator
-//        		"DC6B27F14BA6DAD9994936BA5538A833", // Emulador
-        		"00234CEF73E60DAD7295A48A90AAADD0", // Legend	
-        		} );
 		if(Utils.showAds){
 			AdView adView = (AdView)findViewById(R.id.ad);
-			adView.requestFreshAd();
+			AdRequest request = new AdRequest();
+//			request.setTesting(true);
+		    adView.loadAd(request);
 			adView.setVisibility(View.VISIBLE);
 		}
         
@@ -170,13 +166,19 @@ public class PartidaTicTac extends Activity implements OnClickListener {
         /* Custom theme */
         Drawable auxDrw = ThemeManager.getDrawable(ThemeID.FONDO);
     	// Fondo
-        if(auxDrw!=null)((LinearLayout)findViewById(R.id.linLay_P)).setBackgroundDrawable(auxDrw);
+        if(auxDrw!=null){
+			((LinearLayout)findViewById(R.id.linLay_P)).setBackgroundDrawable(auxDrw);
+		}
         // Titulo
     	auxDrw = ThemeManager.getDrawable(ThemeID.TITULO);
-    	if(auxDrw!=null) ((ImageView)findViewById(R.id.imgTitulo)).setImageDrawable(auxDrw);
+    	if(auxDrw!=null){
+			((ImageView)findViewById(R.id.imgTitulo)).setImageDrawable(auxDrw);
+		}
     	// Tablero
     	auxDrw = ThemeManager.getDrawable(ThemeID.TABLERO);
-    	if(auxDrw!=null) ((TableLayout)findViewById(R.id.tablero)).setBackgroundDrawable(auxDrw);
+    	if(auxDrw!=null){
+			((TableLayout)findViewById(R.id.tablero)).setBackgroundDrawable(auxDrw);
+		}
     	// -- Dinamic Drawables --
     	// Ficha X
     	auxDrw = ThemeManager.getDrawable(ThemeID.FICHA_X);
@@ -505,7 +507,9 @@ public class PartidaTicTac extends Activity implements OnClickListener {
 		new AchievementsChecker(getApplicationContext(), mDbHelper);
 		
 		/* OpenFeint */
-		if(!j2.isHumano()) new ScoreSubmit(puntuacion1, diferencia, j2.getBot().dificultad, gana, mDbHelper);
+		if(!j2.isHumano()){
+			new ScoreSubmit(puntuacion1, diferencia, j2.getBot().dificultad, gana, mDbHelper);
+		}
 		
 //		Log.i("tictacdroide", p.jugadores[0].getNombre()+ " tiene " +p.jugadores[0].getPuntosFinal(diferencia,p.jugadores[1].getBot().dificultad)+" puntos");
 //		Log.i("tictacdroide", p.jugadores[1].getNombre()+ " tiene " +p.jugadores[1].getPuntosFinal(diferencia,p.jugadores[1].getBot().dificultad)+" puntos");

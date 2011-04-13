@@ -106,9 +106,9 @@
 		<meta-data android:value="a14cc9fade97148" android:name="ADMOB_PUBLISHER_ID" />
 		
 		<!-- AdMobActivity definition -->
-		<activity android:name="com.admob.android.ads.AdMobActivity"
-			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-			android:configChanges="orientation|keyboard|keyboardHidden" />
+		<activity android:name="com.google.ads.AdActivity"
+              android:configChanges="keyboard|keyboardHidden|orientation"/>
+		
 			
 		<!-- Track Market installs -->
 		<receiver android:name="com.admob.android.ads.analytics.InstallReceiver" android:exported="true">

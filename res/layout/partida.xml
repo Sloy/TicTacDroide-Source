@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:myapp="http://schemas.android.com/apk/res/com.sloy.tictacdroide"
+	xmlns:ads="http://schemas.android.com/apk/res/com.sloy.tictacdroide"
 	android:id="@+id/linLay_P"
 	android:orientation="vertical" 
 	android:layout_width="fill_parent"
@@ -260,25 +260,19 @@
 	<!-- Anuncios -->
     <LinearLayout
              android:orientation="horizontal"
-			 android:id="@+id/LinearLayout03"
+			 android:id="@+id/adsLayout"
              android:layout_width="fill_parent" 
              android:layout_height="wrap_content"
-             ><!--
-            <ImageView
-		    	android:src="@drawable/ads"
-		    	android:scaleType="centerInside"
-		    	android:layout_width="wrap_content"
-		    	android:layout_height="wrap_content" /> 
-            --> <com.admob.android.ads.AdView 
+             >
+             <com.google.ads.AdView 
              		android:id="@+id/ad"
-                     android:layout_width="fill_parent"
+                     android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:visibility="gone"
-                     myapp:backgroundColor="#000000" 
-                     myapp:primaryTextColor="#FFFFFF"
-                     myapp:secondaryTextColor="#CCCCCC" 
-                     android:layout_gravity="bottom"> 
-             </com.admob.android.ads.AdView>
+                     
+                     ads:adUnitId="a14cc9fade97148"
+                     ads:adSize="BANNER" 
+                     > 
+             </com.google.ads.AdView >
     </LinearLayout>
 
 </LinearLayout>
